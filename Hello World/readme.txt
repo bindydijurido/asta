@@ -1,4 +1,4 @@
-In this case I am using: 
+In this repository I am using: 
 
 - jUnit v4, 
 - Selenium Webdriver, 
