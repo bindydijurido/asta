@@ -71,8 +71,7 @@ public class Task_1 extends Root {
 
 		System.out.println("Price before parsing: " + Price_1_Basket + " zl");
 
-		Price_1_Product_String = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/p[1]")).getText().toString()
-				.split(" ")[1];
+		Price_1_Product_String = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/p[1]")).getText().toString().split(" ")[1];
 
 		Price_1_Product_Double = Double.parseDouble(Price_1_Product_String);
 
