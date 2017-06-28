@@ -2,13 +2,13 @@ package asta;
 
 import org.openqa.selenium.By;
 
-public class Heart {
+public class Root {
 
 	private static final String ROOT = "html/body/div[1]/div/div[2]/div[1]/form/";
 	private static final String FORM = "div[%s]/div[%s]/div/div/div/input";
 	private static final String BUTTON = "div[%s]/div[%s]/div/div/div/span/button";
 
-	public Heart() {
+	public Root() {
 	}
 
 	public static By getForm(String element, int element1) {
