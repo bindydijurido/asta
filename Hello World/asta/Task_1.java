@@ -1,6 +1,9 @@
 package asta;
 
+import static org.junit.Assert.*;
+
 import java.util.concurrent.ThreadLocalRandom;
+
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -36,7 +39,7 @@ public class Task_1 extends Heart {
 
 	}
 
-	@AfterClass
+//	@AfterClass
 	public static void tearDown() throws Exception {
 		driver.quit();
 	}
@@ -96,24 +99,32 @@ public class Task_1 extends Heart {
 
 			for (a = 1; a < 5; a++) {
 				
-				driver.findElement(Heart.getForm("1","1")).sendKeys(static_one_value);
-				driver.findElement(Heart.getButton("1","1")).click();
+				driver.findElement(Heart.getForm("1", a)).sendKeys(static_one_value);
+				driver.findElement(Heart.getButton("1", a)).click();
 
+			}
+			
+			if (sum >= 100) {
+				break;
 			}
 
 			for (a = 1; a < 5; a++) {
 
 				jse.executeScript("scroll(0, 600);");
 
-				driver.findElement(Heart.getForm("2","1")).sendKeys(static_one_value);
-				driver.findElement(Heart.getButton("2","1")).click();
+				driver.findElement(Heart.getForm("2", a)).sendKeys(static_one_value);
+				driver.findElement(Heart.getButton("2", a)).click();
 
+			}
+			
+			if (sum >= 100) {
+				break;
 			}
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(Heart.getForm("3","1")).sendKeys(static_one_value);
-				driver.findElement(Heart.getButton("3","1")).click();
+				driver.findElement(Heart.getForm("3", a)).sendKeys(static_one_value);
+				driver.findElement(Heart.getButton("3", a)).click();
 
 			}
 
@@ -130,7 +141,7 @@ public class Task_1 extends Heart {
 
 		if (wait.until(ExpectedConditions.alertIsPresent()) == null)
 
-			System.out.println("Alert was not present - test failed");
+			fail("Alert was not present - test failed");
 
 		else
 

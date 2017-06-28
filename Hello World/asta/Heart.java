@@ -11,11 +11,17 @@ public class Heart {
     public Heart() {
     }
 
-    public static By getForm(String element, String element1) {
-      return (By) By.xpath(ROOT + String.format(FORM, element, element1));
+    public static By getForm(String element, int element1) {
+    	
+    	String element0 = Integer.toString(element1);
+  
+      return (By) By.xpath(ROOT + String.format(FORM, element, element0));
     }
-    public static By getButton(String element, String element1) {
-        return (By) By.xpath(ROOT + String.format(BUTTON, element, element1));
+    public static By getButton(String element, int element1) {
+    	
+    	String element0 = Integer.toString(element1);
+    	
+        return (By) By.xpath(ROOT + String.format(BUTTON, element, element0));
     }
 
 }
