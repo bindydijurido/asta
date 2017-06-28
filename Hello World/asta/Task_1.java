@@ -20,8 +20,8 @@ public class Task_1 extends Root {
 	double Price_Random_Product;
 	static int random;
 	static int min = 1;
-	static int max = 10;
-	int a;
+	static int max = 20;
+	int a = 1;
 	int sum;
 	double Price_1_Product_Double;
 	double Price_1_Double;
@@ -36,9 +36,10 @@ public class Task_1 extends Root {
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_1";
+		
 	}
 
-//	@AfterClass
+	@AfterClass
 	public static void tearDown() throws Exception {
 		driver.quit();
 	}
@@ -50,15 +51,17 @@ public class Task_1 extends Root {
 
 		driver.get(baseUrl);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/input")));
+		wait.until(ExpectedConditions.elementToBeClickable(Root.getForm("1", a)));
 		
 		random = ThreadLocalRandom.current().nextInt(min, max);
 		random_string = String.valueOf(random);
+		
+		System.out.println("Random quantity for single product: " + random_string);
 
-		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/input")).sendKeys(random_string);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/span/button")));
+		driver.findElement(Root.getForm("1", a)).sendKeys(random_string);
+		wait.until(ExpectedConditions.elementToBeClickable(Root.getButton("1", a)));
 
-		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/span/button")).click();
+		driver.findElement(Root.getButton("1", a)).click();
 
 		Price_1_Basket = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[2]/span")).getText().toString().split(" ")[0];
 
@@ -87,8 +90,10 @@ public class Task_1 extends Root {
 		
 	@Test
 	public void UpTo100() throws InterruptedException {
-
+		
 		WebDriverWait wait = new WebDriverWait(driver, 10);
+		wait.until(ExpectedConditions.elementToBeClickable(Root.getForm("1", a)));
+		
 		String static_one_value = "1";
 		
 		System.out.println("I am starting the test: UpTo100Products Alert Functionality");
@@ -130,7 +135,7 @@ public class Task_1 extends Root {
 			
 			System.out.print(sum + ", ");
 			
-		} while (sum <= 99);
+		} while (sum <= 100);
 		
 				
 		System.out.println(" - the maximum value has been reached");
