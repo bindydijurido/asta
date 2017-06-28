@@ -37,7 +37,6 @@ public class Task_1 extends Root {
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_1";
-
 	}
 
 	@AfterClass
@@ -161,5 +160,4 @@ public class Task_1 extends Root {
 
 			System.out.println("Alert was present - test passed");
 	}
-
 }
