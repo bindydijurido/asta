@@ -36,7 +36,6 @@ public class Task_1 extends Heart {
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_1";
-
 	}
 
 //	@AfterClass
@@ -101,7 +100,6 @@ public class Task_1 extends Heart {
 				
 				driver.findElement(Heart.getForm("1", a)).sendKeys(static_one_value);
 				driver.findElement(Heart.getButton("1", a)).click();
-
 			}
 			
 			if (sum >= 100) {
@@ -114,7 +112,6 @@ public class Task_1 extends Heart {
 
 				driver.findElement(Heart.getForm("2", a)).sendKeys(static_one_value);
 				driver.findElement(Heart.getButton("2", a)).click();
-
 			}
 			
 			if (sum >= 100) {
@@ -125,7 +122,6 @@ public class Task_1 extends Heart {
 
 				driver.findElement(Heart.getForm("3", a)).sendKeys(static_one_value);
 				driver.findElement(Heart.getButton("3", a)).click();
-
 			}
 
 			String ba = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[1]/span")).getText().toString();
