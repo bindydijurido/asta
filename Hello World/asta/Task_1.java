@@ -1,7 +1,6 @@
 package asta;
 
 import java.util.concurrent.ThreadLocalRandom;
-
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -30,7 +29,7 @@ public class Task_1 extends xpath {
 
 	@BeforeClass
 	public static void setUp() throws Exception {
-		System.setProperty("webdriver.gecko.driver", "C:/Users/devtest-pl/OneDrive - di-support/Eclipse/Projects/geckodriver/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_1";
