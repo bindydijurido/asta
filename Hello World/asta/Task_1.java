@@ -90,8 +90,7 @@ public class Task_1 {
 		System.out.println("Price assertion and data transformation succeeded");
 	}
 
-	// ///////////////////////////
-	
+		
 	@Test
 	public void UpTo100() throws InterruptedException {
 
@@ -132,8 +131,7 @@ public class Task_1 {
 			
 		} while (sum <= 99);
 		
-		// safdsfdsad
-		
+				
 		System.out.println(" - the maximum value has been reached");
 
 		if (wait.until(ExpectedConditions.alertIsPresent()) == null)
