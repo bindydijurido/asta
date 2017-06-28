@@ -7,7 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
-public class Task_1 {
+public class Task_1 extends xpath {
 
 	static WebDriver driver;
 	static String baseUrl;
@@ -97,9 +97,10 @@ public class Task_1 {
 		do {
 
 			for (a = 1; a < 5; a++) {
+				
+				driver.findElement(xpath.getForm("1")).sendKeys(static_one_value);
+				driver.findElement(xpath.getButton("1")).click();
 
-				driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[" + a + "]/div/div/div/input")).sendKeys(static_one_value);
-				driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[" + a + "]/div/div/div/span/button")).click();
 			}
 
 			for (a = 1; a < 5; a++) {
