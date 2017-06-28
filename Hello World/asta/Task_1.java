@@ -9,11 +9,11 @@ import org.openqa.selenium.support.ui.*;
 
 public class Task_1 {
 
-	private static WebDriver driver;
-	private static String baseUrl;
+	static WebDriver driver;
+	static String baseUrl;
 
-	private String Price_1_Basket;
-	private String Price_1_Product_String;
+	String Price_1_Basket;
+	String Price_1_Product_String;
 
 	double Price_Random_Product;
 	static int random;
