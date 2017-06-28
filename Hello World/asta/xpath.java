@@ -2,20 +2,20 @@ package asta;
 
 import org.openqa.selenium.By;
 
-public class xpath {
+public class Heart {
 
-    private static final String ROOT = "html/body/div[1]/div/div[2]/div[1]/form/div[1]/";
-    private static final String FORM = "div[%s]/div/div/div/input";
-    private static final String BUTTON = "div[%s]/div/div/div/span/button";
+    private static final String ROOT = "html/body/div[1]/div/div[2]/div[1]/form/";
+    private static final String FORM = "div[%s]/div[%s]/div/div/div/input";
+    private static final String BUTTON = "div[%s]/div[%s]/div/div/div/span/button";
 
-    public xpath() {
+    public Heart() {
     }
 
-    public static By getForm(String element) {
-      return (By) By.xpath(ROOT + String.format(FORM, element));
+    public static By getForm(String element, String element1) {
+      return (By) By.xpath(ROOT + String.format(FORM, element, element1));
     }
-    public static By getButton(String element) {
-        return (By) By.xpath(ROOT + String.format(BUTTON, element));
+    public static By getButton(String element, String element1) {
+        return (By) By.xpath(ROOT + String.format(BUTTON, element, element1));
     }
 
 }

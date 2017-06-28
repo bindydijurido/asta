@@ -6,7 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
-public class Task_1 extends xpath {
+public class Task_1 extends Heart {
 
 	static WebDriver driver;
 	static String baseUrl;
@@ -34,8 +34,6 @@ public class Task_1 extends xpath {
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_1";
 
-		random = ThreadLocalRandom.current().nextInt(min, max);
-		random_string = String.valueOf(random);
 	}
 
 	@AfterClass
@@ -51,15 +49,14 @@ public class Task_1 extends xpath {
 		driver.get(baseUrl);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/input")));
-
-		// insert random generated value into value forms
+		
+		random = ThreadLocalRandom.current().nextInt(min, max);
+		random_string = String.valueOf(random);
 
 		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/input")).sendKeys(random_string);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/span/button")));
 
 		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/div/span/button")).click();
-
-		// Assert result in the basket - product name, amount and price
 
 		Price_1_Basket = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[2]/span")).getText().toString().split(" ")[0];
 
@@ -77,6 +74,8 @@ public class Task_1 extends xpath {
 		Price_Random_Product = Math.round(Price_1_Product_Double * random);
 
 		System.out.println("Product price is: " + Price_Random_Product + " zl");
+		
+		
 
 		Assert.assertEquals(Price_1_Double, Price_Random_Product, random);
 		
@@ -97,8 +96,8 @@ public class Task_1 extends xpath {
 
 			for (a = 1; a < 5; a++) {
 				
-				driver.findElement(xpath.getForm("1")).sendKeys(static_one_value);
-				driver.findElement(xpath.getButton("1")).click();
+				driver.findElement(Heart.getForm("1","1")).sendKeys(static_one_value);
+				driver.findElement(Heart.getButton("1","1")).click();
 
 			}
 
@@ -106,14 +105,16 @@ public class Task_1 extends xpath {
 
 				jse.executeScript("scroll(0, 600);");
 
-				driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[2]/div[" + a + "]/div/div/div/input")).sendKeys(static_one_value);
-				driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[2]/div[" + a + "]/div/div/div/span/button")).click();
+				driver.findElement(Heart.getForm("2","1")).sendKeys(static_one_value);
+				driver.findElement(Heart.getButton("2","1")).click();
+
 			}
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[3]/div[" + a + "]/div/div/div/input")).sendKeys(static_one_value);
-				driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[3]/div[" + a + "]/div/div/div/span/button")).click();
+				driver.findElement(Heart.getForm("3","1")).sendKeys(static_one_value);
+				driver.findElement(Heart.getButton("3","1")).click();
+
 			}
 
 			String ba = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[1]/span")).getText().toString();
