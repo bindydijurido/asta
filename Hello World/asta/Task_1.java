@@ -102,7 +102,6 @@ public class Task_1 {
 
 		do {
 
-			// if (a <= 4) {
 			for (a = 1; a < 5; a++) {
 
 				driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[" + a + "]/div/div/div/input")).sendKeys(static_one_value);
