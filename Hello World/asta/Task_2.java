@@ -23,7 +23,6 @@ public class Task_2 extends Root {
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_2";
-
 	}
 
 	@After
@@ -84,7 +83,6 @@ public class Task_2 extends Root {
 		Assert.assertEquals(AllElementsTextBefore, AllElementsTextAfter);
 
 		System.out.println("Assertion Complete");
-
 	}
 
 	@Test
@@ -143,7 +141,6 @@ public class Task_2 extends Root {
 		Assert.assertEquals(AllElementsTextBefore, AllElementsTextAfter);
 
 		System.out.println("Assertion Complete");
-
 	}
 
 	@Test
@@ -202,7 +199,6 @@ public class Task_2 extends Root {
 		Assert.assertEquals(AllElementsTextBefore, AllElementsTextAfter);
 
 		System.out.println("Assertion Complete");
-
 	}
 
 }
