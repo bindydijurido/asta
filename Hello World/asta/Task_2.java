@@ -53,15 +53,16 @@ public class Task_2 {
 		}
 
 		for (WebElement model : mySportList) {
-			System.out.println(model.getText());
+			System.out.print(model.getText() + ", ");
 		}
+
+		System.out.println(" - OK");
 
 		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")).click();
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Sport");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
 		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li")).click();
-		
 
 		System.out.println("I am getting text from product category: Sport");
 
@@ -74,8 +75,10 @@ public class Task_2 {
 		}
 
 		for (WebElement model : mySportListAfter) {
-			System.out.println(model.getText());
+			System.out.print(model.getText() + ", ");
 		}
+
+		System.out.println(" - OK");
 
 		Assert.assertEquals(AllElementsTextBefore, AllElementsTextAfter);
 
