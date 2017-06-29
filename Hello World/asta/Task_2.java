@@ -57,13 +57,11 @@ public class Task_2 {
 		}
 
 		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")).click();
-		Thread.sleep(4000);
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Sport");
-		Thread.sleep(4000);
+
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
-		Thread.sleep(4000);
 		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li")).click();
-		Thread.sleep(4000);
+		
 
 		System.out.println("I am getting text from product category: Sport");
 
