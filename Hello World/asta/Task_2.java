@@ -7,7 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
-public class Task_2 {
+public class Task_2 extends Root {
 
 	static WebDriver driver;
 	static String baseUrl;
@@ -41,7 +41,7 @@ public class Task_2 {
 		driver.get(baseUrl);
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")));
+		wait.until(ExpectedConditions.elementToBeClickable(Root.getSearch()));
 
 		System.out.println("I am getting text from main page: Sport");
 
@@ -59,7 +59,7 @@ public class Task_2 {
 
 		System.out.println(" - OK");
 
-		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")).click();
+		driver.findElement(Root.getSearch()).click();
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Sport");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
@@ -69,7 +69,7 @@ public class Task_2 {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[3]/div/div[" + (i + 1) + "]/div/div/h4"));
+			WebElement x = driver.findElement(Root.getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());
@@ -96,7 +96,7 @@ public class Task_2 {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")));
+		wait.until(ExpectedConditions.elementToBeClickable(Root.getSearch()));
 
 		System.out.println("I am getting text from main page: Elektronika");
 
@@ -118,7 +118,7 @@ public class Task_2 {
 
 		System.out.println(" - OK");
 
-		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")).click();
+		driver.findElement(Root.getSearch()).click();
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Elektronika");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
@@ -128,7 +128,7 @@ public class Task_2 {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[3]/div/div[" + (i + 1) + "]/div/div/h4"));
+			WebElement x = driver.findElement(Root.getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());
@@ -155,7 +155,7 @@ public class Task_2 {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")));
+		wait.until(ExpectedConditions.elementToBeClickable(Root.getSearch()));
 
 		System.out.println("I am getting text from main page: Firma i Uslugi");
 
@@ -177,7 +177,7 @@ public class Task_2 {
 
 		System.out.println(" - OK");
 
-		driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]")).click();
+		driver.findElement((Root.getSearch())).click();
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Firma i Uslugi");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
@@ -187,7 +187,7 @@ public class Task_2 {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[3]/div/div[" + (i + 1) + "]/div/div/h4"));
+			WebElement x = driver.findElement(Root.getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());
