@@ -41,6 +41,8 @@ public class Task_1 extends Root {
 
 	@AfterClass
 	public static void tearDown() throws Exception {
+		
+		driver.close();
 		driver.quit();
 	}
 
