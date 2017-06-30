@@ -34,7 +34,8 @@ public class Task_1 extends Task1 {
 
 	@BeforeClass
 	public static void setUp() throws Exception {
-		System.setProperty("webdriver.gecko.driver", "C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver",
+				"C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_1";
@@ -50,23 +51,30 @@ public class Task_1 extends Task1 {
 	@Test
 	public void AddProductToBasket() throws Exception {
 
-		System.out.println("I am starting the test: AddProductToBasket functionality");
+		System.out
+				.println("I am starting the test: AddProductToBasket functionality");
 
 		driver.get(baseUrl);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Task1.getForm("1", a)));
+		wait.until(ExpectedConditions.elementToBeClickable(Task1
+				.getForm("1", a)));
 
 		random = ThreadLocalRandom.current().nextInt(min, max);
 		random_string = String.valueOf(random);
 
-		System.out.println("Random quantity for single product: " + random_string);
+		System.out.println("Random quantity for single product: "
+				+ random_string);
 
 		driver.findElement(Task1.getForm("1", a)).sendKeys(random_string);
-		wait.until(ExpectedConditions.elementToBeClickable(Task1.getButton("1", a)));
+		wait.until(ExpectedConditions.elementToBeClickable(Task1.getButton("1",
+				a)));
 
 		driver.findElement(Task1.getButton("1", a)).click();
 
-		Price_1_Basket = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[2]/span")).getText().toString().split(" ")[0];
+		Price_1_Basket = driver
+				.findElement(
+						By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[2]/span"))
+				.getText().toString().split(" ")[0];
 
 		Price_1_Double = Double.parseDouble(Price_1_Basket);
 
@@ -74,8 +82,10 @@ public class Task_1 extends Task1 {
 
 		System.out.println("Price before parsing: " + Price_1_Basket + " zl");
 
-		Price_1_Product_String = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/p[1]")).getText().toString()
-				.split(" ")[1];
+		Price_1_Product_String = driver
+				.findElement(
+						By.xpath("html/body/div[1]/div/div[2]/div[1]/form/div[1]/div[1]/div/div/p[1]"))
+				.getText().toString().split(" ")[1];
 
 		Price_1_Product_Double = Double.parseDouble(Price_1_Product_String);
 
@@ -92,18 +102,22 @@ public class Task_1 extends Task1 {
 	public void UpTo100() throws InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Task1.getForm("1", a)));
+		wait.until(ExpectedConditions.elementToBeClickable(Task1
+				.getForm("1", a)));
 
 		String static_one_value = "1";
 
-		System.out.println("I am starting the test: UpTo100Products Alert Functionality");
-		System.out.println("I am starting fulfilling the basket process with random data to cover all product types: ");
+		System.out
+				.println("I am starting the test: UpTo100Products Alert Functionality");
+		System.out
+				.println("I am starting fulfilling the basket process with random data to cover all product types: ");
 
 		do {
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(Task1.getForm("1", a)).sendKeys(static_one_value);
+				driver.findElement(Task1.getForm("1", a)).sendKeys(
+						static_one_value);
 				driver.findElement(Task1.getButton("1", a)).click();
 			}
 
@@ -115,7 +129,8 @@ public class Task_1 extends Task1 {
 
 				jse.executeScript("scroll(0, 600);");
 
-				driver.findElement(Task1.getForm("2", a)).sendKeys(static_one_value);
+				driver.findElement(Task1.getForm("2", a)).sendKeys(
+						static_one_value);
 				driver.findElement(Task1.getButton("2", a)).click();
 			}
 
@@ -125,11 +140,15 @@ public class Task_1 extends Task1 {
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(Task1.getForm("3", a)).sendKeys(static_one_value);
+				driver.findElement(Task1.getForm("3", a)).sendKeys(
+						static_one_value);
 				driver.findElement(Task1.getButton("3", a)).click();
 			}
 
-			String ba = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[1]/span")).getText().toString();
+			String ba = driver
+					.findElement(
+							By.xpath("html/body/div[1]/div/div[2]/div[2]/div/div[2]/div[2]/p[1]/span"))
+					.getText().toString();
 
 			sum = Integer.parseInt(ba);
 

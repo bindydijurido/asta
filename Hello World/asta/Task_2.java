@@ -21,7 +21,8 @@ public class Task_2 extends Task2 {
 	@Before
 	public void setUpBeforeClass() throws Exception {
 
-		System.setProperty("webdriver.gecko.driver", "C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver",
+				"C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_2";
@@ -61,10 +62,13 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement(Task2.getSearch()).click();
-		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Sport");
+		driver.findElement(By.xpath("html/body/span/span/span[1]/input"))
+				.sendKeys("Sport");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
-		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("html/body/span/span/span[2]/ul/li")));
+		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li"))
+				.click();
 
 		System.out.println("I am getting text from product category: Sport");
 
@@ -117,12 +121,16 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement(Task2.getSearch()).click();
-		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Elektronika");
+		driver.findElement(By.xpath("html/body/span/span/span[1]/input"))
+				.sendKeys("Elektronika");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
-		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("html/body/span/span/span[2]/ul/li")));
+		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li"))
+				.click();
 
-		System.out.println("I am getting text from product category: Elektronika");
+		System.out
+				.println("I am getting text from product category: Elektronika");
 
 		for (int i = 0; i < 6; i++) {
 
@@ -173,12 +181,16 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement((Task2.getSearch())).click();
-		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Firma i Uslugi");
+		driver.findElement(By.xpath("html/body/span/span/span[1]/input"))
+				.sendKeys("Firma i Uslugi");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
-		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li")).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By
+				.xpath("html/body/span/span/span[2]/ul/li")));
+		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li"))
+				.click();
 
-		System.out.println("I am getting text from product category: Firma i Uslugi");
+		System.out
+				.println("I am getting text from product category: Firma i Uslugi");
 
 		for (int i = 0; i < 6; i++) {
 
