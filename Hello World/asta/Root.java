@@ -26,22 +26,22 @@ public class Root {
 
 		return (By) By.xpath(ROOT + String.format(BUTTON, element, Integer.toString(element1)));
 	}
-	
+
 	// For Task 2
-	
+
 	public static By getSearch() {
 
 		return (By) By.xpath(SEARCH);
 	}
-	
+
 	public static By getHeader(int element) {
-		
-		return (By)	By.xpath(String.format(H4, Integer.toString(element)));
+
+		return (By) By.xpath(String.format(H4, Integer.toString(element)));
 	}
-	
+
 	public static By getWebElement(int element, int element1) {
-		
-		return (By)	By.xpath(String.format(WebElement, Integer.toString(element), Integer.toString(element1)));
+
+		return (By) By.xpath(String.format(WebElement, Integer.toString(element), Integer.toString(element1)));
 	}
 
 }
