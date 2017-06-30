@@ -9,6 +9,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
+import asta.root.Root;
+
 public class Task_1 extends Root {
 
 	static WebDriver driver;

@@ -7,6 +7,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
+import asta.root.Root;
+
 public class Task_2 extends Root {
 
 	static WebDriver driver;
@@ -98,8 +100,6 @@ public class Task_2 extends Root {
 
 		System.out.println("I am getting text from main page: Elektronika");
 
-		System.setProperty("webdriver.gecko.driver", "C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
-
 		jse.executeScript("scroll(0, 600);");
 
 		for (int i = 0; i < 6; i++) {
@@ -155,8 +155,6 @@ public class Task_2 extends Root {
 		wait.until(ExpectedConditions.elementToBeClickable(Root.getSearch()));
 
 		System.out.println("I am getting text from main page: Firma i Uslugi");
-
-		System.setProperty("webdriver.gecko.driver", "C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
 
 		jse.executeScript("scroll(0, 600);");
 
