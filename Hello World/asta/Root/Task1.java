@@ -2,7 +2,7 @@ package asta.root;
 
 import org.openqa.selenium.By;
 
-public abstract class Task1 extends Root {
+public abstract class Task1 extends Variables {
 
 	public static By getForm(String element, int element1) {
 

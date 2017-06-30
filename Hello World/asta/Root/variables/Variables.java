@@ -1,6 +1,6 @@
 package asta.root;
 
-public class Variables {
+public class variables {
 	
 	// For Task 1
 	protected static final String ROOT = "html/body/div[1]/div/div[2]/div[1]/form/";

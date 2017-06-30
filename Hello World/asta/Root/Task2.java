@@ -2,7 +2,7 @@ package asta.root;
 
 import org.openqa.selenium.By;
 
-public class Task2 extends Root {
+public class Task2 extends Variables {
 
 	public static By getSearch() {
 
