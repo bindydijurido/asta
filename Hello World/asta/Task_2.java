@@ -7,9 +7,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
-import asta.root.Root;
+import asta.root.Task2;
 
-public class Task_2 extends Root {
+public class Task_2 extends Task2 {
 
 	static WebDriver driver;
 	static String baseUrl;
@@ -42,13 +42,13 @@ public class Task_2 extends Root {
 		driver.get(baseUrl);
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Root.getSearch()));
+		wait.until(ExpectedConditions.elementToBeClickable(Task2.getSearch()));
 
 		System.out.println("I am getting text from main page: Sport");
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(Root.getWebElement(1, i + 1));
+			WebElement x = driver.findElement(Task2.getWebElement(1, i + 1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -60,7 +60,7 @@ public class Task_2 extends Root {
 
 		System.out.println(" - OK");
 
-		driver.findElement(Root.getSearch()).click();
+		driver.findElement(Task2.getSearch()).click();
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Sport");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
@@ -70,7 +70,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(Root.getHeader(i + 1));
+			WebElement x = driver.findElement(Task2.getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());
@@ -96,7 +96,7 @@ public class Task_2 extends Root {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Root.getSearch()));
+		wait.until(ExpectedConditions.elementToBeClickable(Task2.getSearch()));
 
 		System.out.println("I am getting text from main page: Elektronika");
 
@@ -104,7 +104,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(Root.getWebElement(2, i + 1));
+			WebElement x = driver.findElement(Task2.getWebElement(2, i + 1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -116,7 +116,7 @@ public class Task_2 extends Root {
 
 		System.out.println(" - OK");
 
-		driver.findElement(Root.getSearch()).click();
+		driver.findElement(Task2.getSearch()).click();
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Elektronika");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
@@ -126,7 +126,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(Root.getHeader(i + 1));
+			WebElement x = driver.findElement(Task2.getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());
@@ -152,7 +152,7 @@ public class Task_2 extends Root {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Root.getSearch()));
+		wait.until(ExpectedConditions.elementToBeClickable(Task2.getSearch()));
 
 		System.out.println("I am getting text from main page: Firma i Uslugi");
 
@@ -160,7 +160,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(Root.getWebElement(3, i + 1));
+			WebElement x = driver.findElement(Task2.getWebElement(3, i + 1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -172,7 +172,7 @@ public class Task_2 extends Root {
 
 		System.out.println(" - OK");
 
-		driver.findElement((Root.getSearch())).click();
+		driver.findElement((Task2.getSearch())).click();
 		driver.findElement(By.xpath("html/body/span/span/span[1]/input")).sendKeys("Firma i Uslugi");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/span/span/span[2]/ul/li")));
@@ -182,7 +182,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(Root.getHeader(i + 1));
+			WebElement x = driver.findElement(Task2.getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());

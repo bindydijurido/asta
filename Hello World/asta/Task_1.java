@@ -9,9 +9,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
-import asta.root.Root;
+import asta.root.Task1;
 
-public class Task_1 extends Root {
+public class Task_1 extends Task1 {
 
 	static WebDriver driver;
 	static String baseUrl;
@@ -56,7 +56,7 @@ public class Task_1 extends Root {
 
 		driver.get(baseUrl);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Root.getForm("1", a)));
+		wait.until(ExpectedConditions.elementToBeClickable(Task1.getForm("1", a)));
 
 		random = ThreadLocalRandom.current().nextInt(min, max);
 		random_string = String.valueOf(random);
@@ -64,11 +64,11 @@ public class Task_1 extends Root {
 		System.out.println("Random quantity for single product: "
 				+ random_string);
 
-		driver.findElement(Root.getForm("1", a)).sendKeys(random_string);
-		wait.until(ExpectedConditions.elementToBeClickable(Root.getButton("1",
+		driver.findElement(Task1.getForm("1", a)).sendKeys(random_string);
+		wait.until(ExpectedConditions.elementToBeClickable(Task1.getButton("1",
 				a)));
 
-		driver.findElement(Root.getButton("1", a)).click();
+		driver.findElement(Task1.getButton("1", a)).click();
 
 		Price_1_Basket = driver
 				.findElement(
@@ -101,7 +101,7 @@ public class Task_1 extends Root {
 	public void UpTo100() throws InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Root.getForm("1", a)));
+		wait.until(ExpectedConditions.elementToBeClickable(Task1.getForm("1", a)));
 
 		String static_one_value = "1";
 
@@ -114,9 +114,9 @@ public class Task_1 extends Root {
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(Root.getForm("1", a)).sendKeys(
+				driver.findElement(Task1.getForm("1", a)).sendKeys(
 						static_one_value);
-				driver.findElement(Root.getButton("1", a)).click();
+				driver.findElement(Task1.getButton("1", a)).click();
 			}
 
 			if (sum >= 100) {
@@ -127,9 +127,9 @@ public class Task_1 extends Root {
 
 				jse.executeScript("scroll(0, 600);");
 
-				driver.findElement(Root.getForm("2", a)).sendKeys(
+				driver.findElement(Task1.getForm("2", a)).sendKeys(
 						static_one_value);
-				driver.findElement(Root.getButton("2", a)).click();
+				driver.findElement(Task1.getButton("2", a)).click();
 			}
 
 			if (sum >= 100) {
@@ -138,9 +138,9 @@ public class Task_1 extends Root {
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(Root.getForm("3", a)).sendKeys(
+				driver.findElement(Task1.getForm("3", a)).sendKeys(
 						static_one_value);
-				driver.findElement(Root.getButton("3", a)).click();
+				driver.findElement(Task1.getButton("3", a)).click();
 			}
 
 			String ba = driver
