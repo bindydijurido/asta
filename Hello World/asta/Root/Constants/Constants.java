@@ -2,7 +2,7 @@ package asta.root;
 
 public class Constants {
 
-	protected static final String ROOT = "html/body/div[1]/div/div[2]/div[%s]";
+	public static final String ROOT = "html/body/div[1]/div/div[2]/div[%s]";
 
 	public static String getRoot(int element) {
 
@@ -17,5 +17,7 @@ public class Constants {
 	protected static final String SEARCH = "/span/span[1]/span/span[1]";
 	protected static final String HEADER0 = "/div/div[%s]/div/div/h4";
 	protected static final String HEADER1 = "/div[%s]/div[%s]/div/div/h4";
+	protected static final String INTPUT = "html/body/span/span/span[1]/input";
+	protected static final String LITYPE = "html/body/span/span/span[2]/ul/li";
 
 }

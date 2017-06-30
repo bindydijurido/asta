@@ -7,6 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
+import asta.root.Constants;
 import asta.root.Task2;
 
 public class Task_2 extends Task2 {
@@ -62,13 +63,11 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement(Task2.getSearch()).click();
-		driver.findElement(By.xpath("html/body/span/span/span[1]/input"))
-				.sendKeys("Sport");
+		driver.findElement(By.xpath(Constants.INTPUT)).sendKeys("Sport");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("html/body/span/span/span[2]/ul/li")));
-		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li"))
-				.click();
+				.xpath(Constants.LITYPE)));
+		driver.findElement(By.xpath(Constants.LITYPE)).click();
 
 		System.out.println("I am getting text from product category: Sport");
 
@@ -121,13 +120,11 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement(Task2.getSearch()).click();
-		driver.findElement(By.xpath("html/body/span/span/span[1]/input"))
-				.sendKeys("Elektronika");
+		driver.findElement(By.xpath(Constants.INTPUT)).sendKeys("Elektronika");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("html/body/span/span/span[2]/ul/li")));
-		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li"))
-				.click();
+				.xpath(Constants.LITYPE)));
+		driver.findElement(By.xpath(Constants.LITYPE)).click();
 
 		System.out
 				.println("I am getting text from product category: Elektronika");
@@ -181,13 +178,12 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement((Task2.getSearch())).click();
-		driver.findElement(By.xpath("html/body/span/span/span[1]/input"))
-				.sendKeys("Firma i Uslugi");
+		driver.findElement(By.xpath(Constants.INTPUT)).sendKeys(
+				"Firma i Uslugi");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath("html/body/span/span/span[2]/ul/li")));
-		driver.findElement(By.xpath("html/body/span/span/span[2]/ul/li"))
-				.click();
+				.xpath(Constants.LITYPE)));
+		driver.findElement(By.xpath(Constants.LITYPE)).click();
 
 		System.out
 				.println("I am getting text from product category: Firma i Uslugi");
