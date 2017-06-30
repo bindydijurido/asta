@@ -12,6 +12,7 @@ public class Root {
 	// For Task 2
 	private static final String SEARCH = "html/body/div[1]/div/div[2]/div[1]/span/span[1]/span/span[1]";
 	private static final String H4 = "html/body/div[1]/div/div[2]/div[3]/div/div[%s]/div/div/h4";
+	private static final String WebElement = "html/body/div[1]/div/div[2]/div[3]/div[%s]/div[%s]/div/div/h4";
 
 	public Root() {
 	}
@@ -25,7 +26,9 @@ public class Root {
 
 		return (By) By.xpath(ROOT + String.format(BUTTON, element, Integer.toString(element1)));
 	}
-
+	
+	// For Task 2
+	
 	public static By getSearch() {
 
 		return (By) By.xpath(SEARCH);
@@ -34,6 +37,11 @@ public class Root {
 	public static By getHeader(int element) {
 		
 		return (By)	By.xpath(String.format(H4, Integer.toString(element)));
+	}
+	
+	public static By getWebElement(int element, int element1) {
+		
+		return (By)	By.xpath(String.format(WebElement, Integer.toString(element), Integer.toString(element1)));
 	}
 
 }

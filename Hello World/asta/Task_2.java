@@ -46,7 +46,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[3]/div[1]/div[" + (i + 1) + "]/div/div/h4"));
+			WebElement x = driver.findElement(Root.getWebElement(1, i +1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -104,7 +104,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[3]/div[2]/div[" + (i + 1) + "]/div/div/h4"));
+			WebElement x = driver.findElement(Root.getWebElement(2, i +1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -162,7 +162,7 @@ public class Task_2 extends Root {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(By.xpath("html/body/div[1]/div/div[2]/div[3]/div[3]/div[" + (i + 1) + "]/div/div/h4"));
+			WebElement x = driver.findElement(Root.getWebElement(3, i +1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
