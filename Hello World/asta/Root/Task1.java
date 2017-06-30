@@ -2,7 +2,10 @@ package asta.root;
 
 import org.openqa.selenium.By;
 
-public abstract class Task1 extends Constants {
+public abstract class Task1 extends Root {
+
+	protected static final String FORM = "/form/div[%s]/div[%s]/div/div/div/input";
+	protected static final String BUTTON = "/form/div[%s]/div[%s]/div/div/div/span/button";
 
 	public static By getForm(String element, int element1) {
 

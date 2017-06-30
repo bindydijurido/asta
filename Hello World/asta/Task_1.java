@@ -9,8 +9,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
-import asta.root.Constants;
-import asta.root.Task1;
+import asta.root.*;
 
 public class Task_1 extends Task1 {
 
@@ -74,8 +73,9 @@ public class Task_1 extends Task1 {
 
 		Price_1_Basket = driver
 				.findElement(
-						By.xpath(Constants.getRoot(2) + "/div/div[2]/div[2]/p[2]/span"))
-				.getText().toString().split(" ")[0];
+						By.xpath(Root.getRoot(2)
+								+ "/div/div[2]/div[2]/p[2]/span")).getText()
+				.toString().split(" ")[0];
 
 		Price_1_Double = Double.parseDouble(Price_1_Basket);
 
@@ -85,7 +85,8 @@ public class Task_1 extends Task1 {
 
 		Price_1_Product_String = driver
 				.findElement(
-						By.xpath(Constants.getRoot(1) + "/form/div[1]/div[1]/div/div/p[1]"))
+						By.xpath(Root.getRoot(1)
+								+ "/form/div[1]/div[1]/div/div/p[1]"))
 				.getText().toString().split(" ")[1];
 
 		Price_1_Product_Double = Double.parseDouble(Price_1_Product_String);
@@ -148,7 +149,8 @@ public class Task_1 extends Task1 {
 
 			String ba = driver
 					.findElement(
-							By.xpath(Constants.getRoot(2) + "/div/div[2]/div[2]/p[1]/span"))
+							By.xpath(Root.getRoot(2)
+									+ "/div/div[2]/div[2]/p[1]/span"))
 					.getText().toString();
 
 			sum = Integer.parseInt(ba);

@@ -7,8 +7,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.*;
 
-import asta.root.Constants;
-import asta.root.Task2;
+import asta.root.*;
 
 public class Task_2 extends Task2 {
 
@@ -63,11 +62,11 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement(Task2.getSearch()).click();
-		driver.findElement(By.xpath(Constants.INTPUT)).sendKeys("Sport");
+		driver.findElement(By.xpath(Task2.INTPUT)).sendKeys("Sport");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath(Constants.LITYPE)));
-		driver.findElement(By.xpath(Constants.LITYPE)).click();
+				.xpath(Task2.LITYPE)));
+		driver.findElement(By.xpath(Task2.LITYPE)).click();
 
 		System.out.println("I am getting text from product category: Sport");
 
@@ -120,11 +119,11 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement(Task2.getSearch()).click();
-		driver.findElement(By.xpath(Constants.INTPUT)).sendKeys("Elektronika");
+		driver.findElement(By.xpath(Task2.INTPUT)).sendKeys("Elektronika");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath(Constants.LITYPE)));
-		driver.findElement(By.xpath(Constants.LITYPE)).click();
+				.xpath(Task2.LITYPE)));
+		driver.findElement(By.xpath(Task2.LITYPE)).click();
 
 		System.out
 				.println("I am getting text from product category: Elektronika");
@@ -178,12 +177,11 @@ public class Task_2 extends Task2 {
 		System.out.println(" - OK");
 
 		driver.findElement((Task2.getSearch())).click();
-		driver.findElement(By.xpath(Constants.INTPUT)).sendKeys(
-				"Firma i Uslugi");
+		driver.findElement(By.xpath(Task2.INTPUT)).sendKeys("Firma i Uslugi");
 
 		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath(Constants.LITYPE)));
-		driver.findElement(By.xpath(Constants.LITYPE)).click();
+				.xpath(Task2.LITYPE)));
+		driver.findElement(By.xpath(Task2.LITYPE)).click();
 
 		System.out
 				.println("I am getting text from product category: Firma i Uslugi");
