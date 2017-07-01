@@ -27,8 +27,7 @@ public class Test_Task_2 extends MethodsFor2 {
 	@Before
 	public void setUpBeforeClass() throws Exception {
 
-		System.setProperty("webdriver.gecko.driver",
-				"./lib/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "./lib/geckodriver.exe");
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_2";
@@ -70,8 +69,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		driver.findElement(MethodsFor2.getSearch()).click();
 		driver.findElement(By.xpath(MethodsFor2.INTPUT)).sendKeys("Sport");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath(MethodsFor2.LITYPE)));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
 		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
 
 		System.out.println("I am getting text from product category: Sport");
@@ -127,12 +125,10 @@ public class Test_Task_2 extends MethodsFor2 {
 		driver.findElement(MethodsFor2.getSearch()).click();
 		driver.findElement(By.xpath(MethodsFor2.INTPUT)).sendKeys("Elektronika");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath(MethodsFor2.LITYPE)));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
 		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
 
-		System.out
-				.println("I am getting text from product category: Elektronika");
+		System.out.println("I am getting text from product category: Elektronika");
 
 		for (int i = 0; i < 6; i++) {
 
@@ -185,12 +181,10 @@ public class Test_Task_2 extends MethodsFor2 {
 		driver.findElement((MethodsFor2.getSearch())).click();
 		driver.findElement(By.xpath(MethodsFor2.INTPUT)).sendKeys("Firma i Uslugi");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By
-				.xpath(MethodsFor2.LITYPE)));
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
 		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
 
-		System.out
-				.println("I am getting text from product category: Firma i Uslugi");
+		System.out.println("I am getting text from product category: Firma i Uslugi");
 
 		for (int i = 0; i < 6; i++) {
 
