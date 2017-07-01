@@ -1,13 +1,21 @@
 package asta;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-import org.junit.*;
-import org.openqa.selenium.*;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import asta.root.*;
+import asta.Root.Task2;
 
 public class Task_2 extends Task2 {
 
@@ -22,7 +30,7 @@ public class Task_2 extends Task2 {
 	public void setUpBeforeClass() throws Exception {
 
 		System.setProperty("webdriver.gecko.driver",
-				"C:/Eclipse/plugins/geckodriver-v0.16.1-win64/geckodriver.exe");
+				"./lib/geckodriver.exe");
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_2";
