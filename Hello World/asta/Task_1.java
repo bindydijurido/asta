@@ -15,10 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import asta.Root.Root;
-import asta.Root.Task1;
-
-public class Task_1 extends Task1 {
+public class Task_1 extends MethodsFor1 {
 
 	static WebDriver driver;
 	static String baseUrl;
@@ -63,7 +60,7 @@ public class Task_1 extends Task1 {
 
 		driver.get(baseUrl);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Task1
+		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor1
 				.getForm("1", a)));
 
 		random = ThreadLocalRandom.current().nextInt(min, max);
@@ -72,11 +69,11 @@ public class Task_1 extends Task1 {
 		System.out.println("Random quantity for single product: "
 				+ random_string);
 
-		driver.findElement(Task1.getForm("1", a)).sendKeys(random_string);
-		wait.until(ExpectedConditions.elementToBeClickable(Task1.getButton("1",
+		driver.findElement(MethodsFor1.getForm("1", a)).sendKeys(random_string);
+		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor1.getButton("1",
 				a)));
 
-		driver.findElement(Task1.getButton("1", a)).click();
+		driver.findElement(MethodsFor1.getButton("1", a)).click();
 
 		Price_1_Basket = driver
 				.findElement(
@@ -111,7 +108,7 @@ public class Task_1 extends Task1 {
 	public void UpTo100() throws InterruptedException {
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(Task1
+		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor1
 				.getForm("1", a)));
 
 		String static_one_value = "1";
@@ -125,9 +122,9 @@ public class Task_1 extends Task1 {
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(Task1.getForm("1", a)).sendKeys(
+				driver.findElement(MethodsFor1.getForm("1", a)).sendKeys(
 						static_one_value);
-				driver.findElement(Task1.getButton("1", a)).click();
+				driver.findElement(MethodsFor1.getButton("1", a)).click();
 			}
 
 			if (sum >= 100) {
@@ -138,9 +135,9 @@ public class Task_1 extends Task1 {
 
 				jse.executeScript("scroll(0, 600);");
 
-				driver.findElement(Task1.getForm("2", a)).sendKeys(
+				driver.findElement(MethodsFor1.getForm("2", a)).sendKeys(
 						static_one_value);
-				driver.findElement(Task1.getButton("2", a)).click();
+				driver.findElement(MethodsFor1.getButton("2", a)).click();
 			}
 
 			if (sum >= 100) {
@@ -149,9 +146,9 @@ public class Task_1 extends Task1 {
 
 			for (a = 1; a < 5; a++) {
 
-				driver.findElement(Task1.getForm("3", a)).sendKeys(
+				driver.findElement(MethodsFor1.getForm("3", a)).sendKeys(
 						static_one_value);
-				driver.findElement(Task1.getButton("3", a)).click();
+				driver.findElement(MethodsFor1.getButton("3", a)).click();
 			}
 
 			String ba = driver

@@ -1,8 +1,8 @@
-package asta.Root;
+package asta;
 
 import org.openqa.selenium.By;
 
-public class Task2 extends Root {
+public abstract class MethodsFor2 extends Root {
 
 	protected static final String SEARCH = "/span/span[1]/span/span[1]";
 	protected static final String HEADER0 = "/div/div[%s]/div/div/h4";

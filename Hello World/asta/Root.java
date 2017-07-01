@@ -1,4 +1,4 @@
-package asta.Root;
+package asta;
 
 public abstract class Root {
 

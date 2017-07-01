@@ -1,8 +1,8 @@
-package asta.Root;
+package asta;
 
 import org.openqa.selenium.By;
 
-public abstract class Task1 extends Root {
+public abstract class MethodsFor1 extends Root {
 
 	protected static final String FORM = "/form/div[%s]/div[%s]/div/div/div/input";
 	protected static final String BUTTON = "/form/div[%s]/div[%s]/div/div/div/span/button";
