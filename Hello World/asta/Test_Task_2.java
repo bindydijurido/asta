@@ -41,16 +41,16 @@ public class Test_Task_2 extends MethodsFor2 {
 	}
 
 	@Test
-	public void ListOfSportProducts() throws InterruptedException {
+	public void FirstCategoryFunctionality() throws InterruptedException {
 
-		System.out.println("I am starting the test: ListOfSportProducts");
+		System.out.println("I am checking products list");
 
 		driver.get(baseUrl);
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor2.getSearch()));
 
-		System.out.println("I am getting text from main page: Sport");
+		System.out.println("I am getting text from main page");
 
 		for (int i = 0; i < 6; i++) {
 
@@ -72,7 +72,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
 		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
 
-		System.out.println("I am getting text from product category: Sport");
+		System.out.println("I am getting text from product category");
 
 		for (int i = 0; i < 6; i++) {
 
@@ -94,9 +94,9 @@ public class Test_Task_2 extends MethodsFor2 {
 	}
 
 	@Test
-	public void ListOfElektronikaProducts() throws InterruptedException {
+	public void SecondCategoryFunctionality() throws InterruptedException {
 
-		System.out.println("I am starting the test: ListOfElektronikaProducts");
+		System.out.println("I am checking products list");
 
 		driver.get(baseUrl);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -104,7 +104,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor2.getSearch()));
 
-		System.out.println("I am getting text from main page: Elektronika");
+		System.out.println("I am getting text from main page");
 
 		jse.executeScript("scroll(0, 600);");
 
@@ -128,7 +128,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
 		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
 
-		System.out.println("I am getting text from product category: Elektronika");
+		System.out.println("I am checking products category");
 
 		for (int i = 0; i < 6; i++) {
 
@@ -150,9 +150,9 @@ public class Test_Task_2 extends MethodsFor2 {
 	}
 
 	@Test
-	public void ListOfFirmaIUslugiProducts() throws InterruptedException {
+	public void ThirdCategoryFunctionality() throws InterruptedException {
 
-		System.out.println("I am starting the test: ListOfElektronikaProducts");
+		System.out.println("I am checking products list");
 
 		driver.get(baseUrl);
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -160,7 +160,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor2.getSearch()));
 
-		System.out.println("I am getting text from main page: Firma i Uslugi");
+		System.out.println("I am getting text from main page");
 
 		jse.executeScript("scroll(0, 600);");
 
@@ -184,7 +184,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
 		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
 
-		System.out.println("I am getting text from product category: Firma i Uslugi");
+		System.out.println("I am checking products category");
 
 		for (int i = 0; i < 6; i++) {
 

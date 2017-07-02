@@ -54,7 +54,7 @@ public class Test_Task_1 extends MethodsFor1 {
 	@Test
 	public void AddProductToBasket() throws Exception {
 
-		System.out.println("I am starting the test: AddProductToBasket functionality");
+		System.out.println("I am checking AddProductToBasket functionality");
 
 		driver.get(baseUrl);
 		WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -101,8 +101,8 @@ public class Test_Task_1 extends MethodsFor1 {
 
 		String static_one_value = "1";
 
-		System.out.println("I am starting the test: UpTo100Products Alert Functionality");
-		System.out.println("I am starting fulfilling the basket process with random data to cover all product types: ");
+		System.out.println("I am checking Alert Functionality");
+		System.out.println("I am starting fulfilling the basket with random data to cover all avaiable product types: ");
 
 		do {
 
