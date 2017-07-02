@@ -204,5 +204,4 @@ public class Test_Task_2 extends MethodsFor2 {
 
 		System.out.println("Assertion Complete");
 	}
-
 }
