@@ -1,1 +1,5 @@
 /bin
+/.gradle/
+/build/
+build/reports/tests/test/packages/asta.html
+*.html
