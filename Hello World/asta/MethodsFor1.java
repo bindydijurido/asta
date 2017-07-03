@@ -9,12 +9,11 @@ public abstract class MethodsFor1 extends Root {
 
 	public static By getForm(String element, int element1) {
 
-		return (By) By.xpath(getRoot(1) + String.format(FORM, element, Integer.toString(element1)));
+		return (By) By.xpath(String.format(getRoot(1) +FORM, element, Integer.toString(element1)));
 	}
 
 	public static By getButton(String element, int element1) {
 
-		return (By) By.xpath(getRoot(1) + String.format(BUTTON, element, Integer.toString(element1)));
+		return (By) By.xpath(String.format(getRoot(1) + BUTTON, element, Integer.toString(element1)));
 	}
-
 }
