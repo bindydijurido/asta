@@ -11,7 +11,7 @@ In this project I am using:
 IDE: Eclipse Oxygen Release for Java Developers (4.7.0) - https://eclipse.org/downloads/eclipse-packages/index.php
 BROWSER: Mozilla Firefox ESR 52.2.1 (64 bit) - https://www.mozilla.org/en-US/firefox/organizations/all/
 
-You can download everything manually or simply import gradle project.
+You can download everything manually or simply import gradle project. *Please remember to check libs folder before running the tests*.
 
 
 Enjoy and feel free to comment everything you want,
