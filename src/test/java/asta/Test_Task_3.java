@@ -34,7 +34,7 @@ public class Test_Task_3 extends MethodsFor3 {
 	}
 
 	@Test
-	public void MenuFunctionality() throws InterruptedException {
+	public void WholeMenuFunctionality() throws InterruptedException {
 		
 		// setup directory path to image
 		
