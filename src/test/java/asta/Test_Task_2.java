@@ -9,7 +9,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -17,7 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Test_Task_2 extends MethodsFor2 {
 
-	static WebDriver driver;
 	static String baseUrl;
 	public List<String> AllElementsTextBefore = new ArrayList<>();
 	public List<String> AllElementsTextAfter = new ArrayList<>();
@@ -28,12 +26,13 @@ public class Test_Task_2 extends MethodsFor2 {
 	public void setUpBeforeClass() throws Exception {
 
 		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
-		
-		/** for Mac OS systems: 
-		
-		System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
-		
-		*/
+
+		/**
+		 * for MacOS systems:
+		 * 
+		 * System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
+		 * 
+		 */
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_2";
@@ -54,13 +53,13 @@ public class Test_Task_2 extends MethodsFor2 {
 		driver.get(baseUrl);
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor2.getSearch()));
+		wait.until(ExpectedConditions.elementToBeClickable(getSearch()));
 
 		System.out.println("I am getting text from main page");
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(MethodsFor2.getWebElement(1, i + 1));
+			WebElement x = findElement(getWebElement(1, i + 1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -72,17 +71,17 @@ public class Test_Task_2 extends MethodsFor2 {
 
 		System.out.println(" - OK");
 
-		driver.findElement(MethodsFor2.getSearch()).click();
-		driver.findElement(By.xpath(MethodsFor2.INTPUT)).sendKeys("Sport");
+		findElement(getSearch()).click();
+		findElement(By.xpath(INTPUT)).sendKeys("Sport");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
-		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LITYPE)));
+		findElement(By.xpath(LITYPE)).click();
 
 		System.out.println("I am getting text from product category");
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(MethodsFor2.getHeader(i + 1));
+			WebElement x = findElement(getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());
@@ -108,7 +107,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor2.getSearch()));
+		wait.until(ExpectedConditions.elementToBeClickable(getSearch()));
 
 		System.out.println("I am getting text from main page");
 
@@ -116,7 +115,7 @@ public class Test_Task_2 extends MethodsFor2 {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(MethodsFor2.getWebElement(2, i + 1));
+			WebElement x = findElement(getWebElement(2, i + 1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -128,17 +127,17 @@ public class Test_Task_2 extends MethodsFor2 {
 
 		System.out.println(" - OK");
 
-		driver.findElement(MethodsFor2.getSearch()).click();
-		driver.findElement(By.xpath(MethodsFor2.INTPUT)).sendKeys("Elektronika");
+		findElement(getSearch()).click();
+		findElement(By.xpath(INTPUT)).sendKeys("Elektronika");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
-		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LITYPE)));
+		findElement(By.xpath(LITYPE)).click();
 
 		System.out.println("I am checking products category");
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(MethodsFor2.getHeader(i + 1));
+			WebElement x = findElement(getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());
@@ -164,7 +163,7 @@ public class Test_Task_2 extends MethodsFor2 {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(MethodsFor2.getSearch()));
+		wait.until(ExpectedConditions.elementToBeClickable(getSearch()));
 
 		System.out.println("I am getting text from main page");
 
@@ -172,7 +171,7 @@ public class Test_Task_2 extends MethodsFor2 {
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(MethodsFor2.getWebElement(3, i + 1));
+			WebElement x = findElement(getWebElement(3, i + 1));
 			myList.add(x);
 
 			AllElementsTextBefore.add(x.getText());
@@ -184,17 +183,17 @@ public class Test_Task_2 extends MethodsFor2 {
 
 		System.out.println(" - OK");
 
-		driver.findElement((MethodsFor2.getSearch())).click();
-		driver.findElement(By.xpath(MethodsFor2.INTPUT)).sendKeys("Firma i Uslugi");
+		findElement((getSearch())).click();
+		findElement(By.xpath(INTPUT)).sendKeys("Firma i Uslugi");
 
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(MethodsFor2.LITYPE)));
-		driver.findElement(By.xpath(MethodsFor2.LITYPE)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(LITYPE)));
+		findElement(By.xpath(LITYPE)).click();
 
 		System.out.println("I am checking products category");
 
 		for (int i = 0; i < 6; i++) {
 
-			WebElement x = driver.findElement(MethodsFor2.getHeader(i + 1));
+			WebElement x = findElement(getHeader(i + 1));
 			myListAfter.add(x);
 
 			AllElementsTextAfter.add(x.getText());

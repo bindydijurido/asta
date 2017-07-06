@@ -1,8 +1,12 @@
 package asta;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public abstract class MethodsFor2 extends Root {
+
+	protected static WebDriver driver;
 
 	protected static final String SEARCH = "/span/span[1]/span/span[1]";
 	protected static final String HEADER0 = "/div/div[%s]/div/div/h4";
@@ -24,6 +28,13 @@ public abstract class MethodsFor2 extends Root {
 
 		return (By) By
 				.xpath(String.format(Root.getRoot(3) + HEADER1, Integer.toString(element), Integer.toString(element1)));
+	}
+
+	public static WebElement findElement(By locator) {
+
+		WebElement Element = driver.findElement(locator);
+
+		return Element;
 	}
 
 }
