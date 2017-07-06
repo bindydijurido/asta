@@ -27,7 +27,7 @@ public class Test_Task_2 extends MethodsFor2 {
 	@Before
 	public void setUpBeforeClass() throws Exception {
 
-		System.setProperty("webdriver.gecko.driver", "./libs/geckodriver.exe");
+		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_2";
