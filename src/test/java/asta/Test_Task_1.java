@@ -38,8 +38,14 @@ public class Test_Task_1 extends MethodsFor1 {
 
 	@BeforeClass
 	public static void setUp() throws Exception {
+		
 		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
 		
+		/** for Mac OS systems: 
+		
+		System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
+		
+		*/
 
 		driver = new FirefoxDriver();
 		baseUrl = "https://testingcup.pgs-soft.com/task_1";
