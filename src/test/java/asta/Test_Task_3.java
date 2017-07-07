@@ -96,5 +96,4 @@ public class Test_Task_3 extends MethodsFor3 {
 		driver.close();
 		driver.quit();
 	}
-
 }
