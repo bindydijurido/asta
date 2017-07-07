@@ -14,6 +14,14 @@ import org.junit.Assert;
 public class Test_Task_4 extends MethodsFor4 {
 
 	static String baseUrl;
+	static String latestWindow;
+	static String actualName;
+	static String expectedName;
+	static String actualMail;
+	static String expectedMail;
+	static String actualNumber;
+	static String expectedNumber;
+	static WebElement iframe;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -43,21 +51,21 @@ public class Test_Task_4 extends MethodsFor4 {
 
 		Object[] windowHandle = driver.getWindowHandles().toArray();
 
-		String latestWindow = (String) windowHandle[windowHandle.length - 1];
+		latestWindow = (String) windowHandle[windowHandle.length - 1];
 		driver.switchTo().window(latestWindow);
 
-		WebElement a = findElement(By.xpath("html/body/iframe"));
+		iframe = findElement(By.xpath("html/body/iframe"));
 
-		driver.switchTo().frame(a);
+		driver.switchTo().frame(iframe);
 
 		// check if form input is limited to 50 signs
 		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[1]/div[1]/input"))
 				.sendKeys("Jan Kowalski i jego piecdziesiat znakow - wystarczy?");
 
-		String actualName = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[1]/div[1]/input"))
+		actualName = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[1]/div[1]/input"))
 				.getAttribute("value");
 
-		String expectedName = "Jan Kowalski i jego piecdziesiat znakow - wystarcz";
+		expectedName = "Jan Kowalski i jego piecdziesiat znakow - wystarcz";
 
 		Assert.assertEquals(expectedName, actualName);
 
@@ -69,19 +77,19 @@ public class Test_Task_4 extends MethodsFor4 {
 
 		// check if alert email is working properly
 
-		String actualMail = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[2]/div[1]/span"))
-				.getText().toString();
+		actualMail = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[2]/div[1]/span")).getText()
+				.toString();
 
-		String expectedMail = "Nieprawid≈Çowy email";
+		expectedMail = "Nieprawid≥owy email";
 
 		Assert.assertEquals(expectedMail, actualMail);
 
 		// check if alert telephone number is working properly
 
-		String actualNumber = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[3]/div[1]/span"))
-				.getText().toString();
+		actualNumber = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[3]/div[1]/span")).getText()
+				.toString();
 
-		String expectedNumber = "Z≈Çy format telefonu - prawid≈Çowy: 600-100-200";
+		expectedNumber = "Z≥y format telefonu - prawid≥owy: 600-100-200";
 
 		Assert.assertEquals(expectedNumber, actualNumber);
 
