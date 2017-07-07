@@ -1,4 +1,4 @@
-Put your geckodriver.exe here
+Put your geckodriver.exe here in this directory.
 
 Download link is here (it is important to download v0.16! - higher version is broken!):
 
