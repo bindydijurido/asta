@@ -14,6 +14,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import asta.methods.MethodsFor2;
+
 public class Test_Task_2 extends MethodsFor2 {
 
 	static String baseUrl;

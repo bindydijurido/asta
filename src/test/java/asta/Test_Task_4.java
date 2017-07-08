@@ -11,6 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import asta.methods.MethodsFor4;
+
 import org.junit.Assert;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)

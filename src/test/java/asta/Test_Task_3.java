@@ -13,6 +13,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import asta.methods.MethodsFor3;
+
 public class Test_Task_3 extends MethodsFor3 {
 
 	static String baseUrl;
