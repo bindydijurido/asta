@@ -2,8 +2,10 @@ package asta;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import org.junit.Assert;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Test_Task_4 extends MethodsFor4 {
 
 	static String baseUrl;
@@ -21,6 +24,7 @@ public class Test_Task_4 extends MethodsFor4 {
 	static String expectedMail;
 	static String actualNumber;
 	static String expectedNumber;
+
 	static WebElement iframe;
 
 	@BeforeClass
@@ -40,14 +44,14 @@ public class Test_Task_4 extends MethodsFor4 {
 	}
 
 	@Test
-	public void FormFunctionality() throws InterruptedException {
+	public void test1AlertNameForm() throws InterruptedException {
 
 		driver.get(baseUrl);
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("html/body/div[1]/div/div[2]/div/div[2]/button")));
+		wait.until(ExpectedConditions.elementToBeClickable(getButton()));
 
-		findElement(By.xpath("html/body/div[1]/div/div[2]/div/div[2]/button")).click();
+		findElement(getButton()).click();
 
 		Object[] windowHandle = driver.getWindowHandles().toArray();
 
@@ -58,53 +62,52 @@ public class Test_Task_4 extends MethodsFor4 {
 
 		driver.switchTo().frame(iframe);
 
-		// check if form input is limited to 50 signs
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[1]/div[1]/input"))
-				.sendKeys("Jan Kowalski i jego piecdziesiat znakow - wystarczy?");
+		findElement(getInput(1)).sendKeys("Jan Kowalski i jego piecdziesiat znakow - wystarczy?");
 
-		actualName = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[1]/div[1]/input"))
-				.getAttribute("value");
+		actualName = findElement(getInput(1)).getAttribute("value");
 
 		expectedName = "Jan Kowalski i jego piecdziesiat znakow - wystarcz";
 
 		Assert.assertEquals(expectedName, actualName);
 
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[2]/div[1]/input")).sendKeys("test.com.pl");
+		findElement(getInput(2)).sendKeys("test.com.pl");
 
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[3]/div[1]/input")).sendKeys("513513513");
+		findElement(getInput(3)).sendKeys("513513513");
 
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/button")).submit();
+		findElement(getButton1()).submit();
+	}
 
-		// check if alert email is working properly
+	@Test
+	public void test2AlertEmail() {
 
-		actualMail = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[2]/div[1]/span")).getText()
-				.toString();
+		actualMail = findElement(getSpan(2)).getText().toString();
 
 		expectedMail = "Nieprawid³owy email";
 
 		Assert.assertEquals(expectedMail, actualMail);
+	}
 
-		// check if alert telephone number is working properly
+	@Test
+	public void test3AlertTelephoneNumber() {
 
-		actualNumber = findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[3]/div[1]/span")).getText()
-				.toString();
+		actualNumber = findElement(getSpan(3)).getText().toString();
 
 		expectedNumber = "Z³y format telefonu - prawid³owy: 600-100-200";
 
 		Assert.assertEquals(expectedNumber, actualNumber);
+	}
 
-		// correct whole form
+	@Test
+	public void test4CorrectFormFunctionality() {
+		findElement(getInput(1)).sendKeys("Jan Kowalski");
 
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[1]/div[1]/input")).sendKeys("Jan Kowalski");
+		findElement(getInput(2)).sendKeys("test@test.com.pl");
 
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[2]/div[1]/input"))
-				.sendKeys("test@test.com.pl");
+		findElement(getInput(3)).clear();
 
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[3]/div[1]/input")).clear();
+		findElement(getInput(3)).sendKeys("513-513-513");
 
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/div[3]/div[1]/input")).sendKeys("513-513-513");
-
-		findElement(By.xpath("html/body/div[1]/div/div[1]/div/div/form/button")).submit();
+		findElement(getButton1()).submit();
 
 		findElement(By.xpath("html/body/div[1]/h1"));
 	}
