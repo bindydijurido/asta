@@ -84,7 +84,7 @@ public class Test_Task_4 extends MethodsFor4 {
 
 		actualMail = findElement(getSpan(2)).getText().toString();
 
-		expectedMail = "Nieprawid≥owy email";
+		expectedMail = "Nieprawid≈Çowy email";
 
 		Assert.assertEquals(expectedMail, actualMail);
 	}
@@ -94,7 +94,7 @@ public class Test_Task_4 extends MethodsFor4 {
 
 		actualNumber = findElement(getSpan(3)).getText().toString();
 
-		expectedNumber = "Z≥y format telefonu - prawid≥owy: 600-100-200";
+		expectedNumber = "Z≈Çy format telefonu - prawid≈Çowy: 600-100-200";
 
 		Assert.assertEquals(expectedNumber, actualNumber);
 	}
