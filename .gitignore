@@ -6,3 +6,7 @@
 *.html
 *.idx
 *.bin
+*.exe
+*.class
+*.bin
+*.lock

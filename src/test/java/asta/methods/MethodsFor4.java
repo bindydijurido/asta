@@ -1,12 +1,9 @@
 package asta.methods;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public abstract class MethodsFor4 {
-
-	protected static WebDriver driver;
+public abstract class MethodsFor4 extends Root {
 
 	public static String BUTTON = "html/body/div[1]/div/div[2]/div/div[2]/button";
 	public static String INPUT = "html/body/div[1]/div/div[1]/div/div/form/div[%s]/div[1]/input";

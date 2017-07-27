@@ -3,14 +3,11 @@ package asta;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,34 +15,12 @@ import asta.methods.MethodsFor2;
 
 public class Test_Task_2 extends MethodsFor2 {
 
-	static String baseUrl;
+	static String baseUrl = "https://testingcup.pgs-soft.com/task_2";
+
 	public List<String> AllElementsTextBefore = new ArrayList<>();
 	public List<String> AllElementsTextAfter = new ArrayList<>();
 	public List<WebElement> myList = new ArrayList<>();
 	public List<WebElement> myListAfter = new ArrayList<>();
-
-	@Before
-	public void setUpBeforeClass() throws Exception {
-
-		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
-
-		/**
-		 * for MacOS systems:
-		 * 
-		 * System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
-		 * 
-		 */
-
-		driver = new FirefoxDriver();
-		baseUrl = "https://testingcup.pgs-soft.com/task_2";
-	}
-
-	@After
-	public void tearDownAfterClass() throws Exception {
-
-		driver.close();
-		driver.quit();
-	}
 
 	@Test
 	public void FirstCategoryFunctionality() throws InterruptedException {

@@ -4,22 +4,18 @@ import static org.junit.Assert.fail;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import asta.methods.MethodsFor1;
-import asta.methods.Root;
 
 public class Test_Task_1 extends MethodsFor1 {
 
-	static String baseUrl;
+	static String baseUrl = "https://testingcup.pgs-soft.com/task_1";
 
 	String Price_1_Basket;
 	String Price_1_Product_String;
@@ -36,29 +32,6 @@ public class Test_Task_1 extends MethodsFor1 {
 	static String random_string;
 
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
-
-	@BeforeClass
-	public static void setUp() throws Exception {
-
-		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
-
-		/**
-		 * for MacOS systems:
-		 * 
-		 * System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
-		 * 
-		 */
-
-		driver = new FirefoxDriver();
-		baseUrl = "https://testingcup.pgs-soft.com/task_1";
-	}
-
-	@AfterClass
-	public static void tearDown() throws Exception {
-
-		driver.close();
-		driver.quit();
-	}
 
 	@Test
 	public void AddProductToBasket() throws Exception {
@@ -79,7 +52,7 @@ public class Test_Task_1 extends MethodsFor1 {
 
 		findElement(getButton("1", a)).click();
 
-		Price_1_Basket = findElement(By.xpath(Root.getRoot(2) + "/div/div[2]/div[2]/p[2]/span")).getText().toString()
+		Price_1_Basket = findElement(By.xpath(getRoot(2) + "/div/div[2]/div[2]/p[2]/span")).getText().toString()
 				.split(" ")[0];
 
 		Price_1_Double = Double.parseDouble(Price_1_Basket);
@@ -88,7 +61,7 @@ public class Test_Task_1 extends MethodsFor1 {
 
 		System.out.println("Price before parsing: " + Price_1_Basket + " zl");
 
-		Price_1_Product_String = findElement(By.xpath(Root.getRoot(1) + "/form/div[1]/div[1]/div/div/p[1]")).getText()
+		Price_1_Product_String = findElement(By.xpath(getRoot(1) + "/form/div[1]/div[1]/div/div/p[1]")).getText()
 				.toString().split(" ")[1];
 
 		Price_1_Product_Double = Double.parseDouble(Price_1_Product_String);
@@ -144,7 +117,7 @@ public class Test_Task_1 extends MethodsFor1 {
 				findElement(getButton("3", a)).click();
 			}
 
-			String ba = findElement(By.xpath(Root.getRoot(2) + "/div/div[2]/div[2]/p[1]/span")).getText().toString();
+			String ba = findElement(By.xpath(getRoot(2) + "/div/div[2]/div[2]/p[1]/span")).getText().toString();
 
 			sum = Integer.parseInt(ba);
 

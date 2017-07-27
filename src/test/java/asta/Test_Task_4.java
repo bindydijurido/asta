@@ -1,13 +1,10 @@
 package asta;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,7 +15,7 @@ import org.junit.Assert;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Test_Task_4 extends MethodsFor4 {
 
-	static String baseUrl;
+	static String baseUrl = "https://testingcup.pgs-soft.com/task_4";
 	static String latestWindow;
 	static String actualName;
 	static String expectedName;
@@ -28,22 +25,6 @@ public class Test_Task_4 extends MethodsFor4 {
 	static String expectedNumber;
 
 	static WebElement iframe;
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-
-		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
-
-		/**
-		 * for MacOS systems:
-		 * 
-		 * System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
-		 * 
-		 */
-
-		driver = new FirefoxDriver();
-		baseUrl = "https://testingcup.pgs-soft.com/task_4";
-	}
 
 	@Test
 	public void test1AlertNameForm() throws InterruptedException {
@@ -112,12 +93,5 @@ public class Test_Task_4 extends MethodsFor4 {
 		findElement(getButton1()).submit();
 
 		findElement(By.xpath("html/body/div[1]/h1"));
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-
-		driver.close();
-		driver.quit();
 	}
 }

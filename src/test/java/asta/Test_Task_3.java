@@ -3,12 +3,9 @@ package asta;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,29 +14,13 @@ import asta.methods.MethodsFor3;
 
 public class Test_Task_3 extends MethodsFor3 {
 
-	static String baseUrl;
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-
-		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
-
-		/**
-		 * for MacOS systems:
-		 * 
-		 * System.setProperty("webdriver.gecko.driver", "libs/geckodriver");
-		 * 
-		 */
-
-		driver = new FirefoxDriver();
-		baseUrl = "https://testingcup.pgs-soft.com/task_3";
-	}
+	static String baseUrl = "https://testingcup.pgs-soft.com/task_3";
 
 	@Test
 	public void WholeMenuFunctionality() throws InterruptedException {
-		
+
 		// setup directory path to image
-		
+
 		Path path = Paths.get("img/link.jpg");
 		Path absolutePath = path.toAbsolutePath();
 
@@ -90,12 +71,5 @@ public class Test_Task_3 extends MethodsFor3 {
 		findElement(By.xpath("html/body/div[1]/div/div[2]/div/div[1]/div[1]/div/form/button")).submit();
 
 		driver.findElement(By.xpath("html/body/div[2]/div/div[2]/div/span"));
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-
-		driver.close();
-		driver.quit();
 	}
 }
