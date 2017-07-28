@@ -1,4 +1,4 @@
-package asta;
+package asta.methods;
 
 import static org.junit.Assert.*;
 
@@ -6,9 +6,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import asta.methods.MethodsFor5;
-
-public class Test_Task_5 extends MethodsFor5 {
+public class MethodsFor5 extends Root {
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
@@ -24,6 +22,4 @@ public class Test_Task_5 extends MethodsFor5 {
 	}
 }
 
-// i'll continue this one in next week i suppose : )
-// seriously :) i am busy right now.
-// F.
+// I will write this one in next week. I am too busy right now (i am just checking branches functionality here :) 
