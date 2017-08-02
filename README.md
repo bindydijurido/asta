@@ -1,5 +1,11 @@
 Hello Folks!
 
+#go directly to tests:
+
+https://github.com/bindydijurido/asta/tree/master/src/test/java/asta
+
+#
+
 In this project I am using: 
 
 - jUnit.jar v4 - https://github.com/junit-team/junit4/wiki/Download-and-Install
