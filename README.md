@@ -1,8 +1,12 @@
 Hello Folks!
 
-#go directly to tests:
+# go directly to the core:
 
 https://github.com/bindydijurido/asta/tree/master/src/test/java/asta
+
+# page with the tasks is linked here: 
+
+https://testingcup.pgs-soft.com/
 
 #
 
