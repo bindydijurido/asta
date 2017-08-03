@@ -58,6 +58,5 @@ public class Test_Task_5 extends MethodsFor5 {
 
 			System.out.println("Data from File.txt: " + FileText + " / " + "Data from WebPage: " + Table);
 		}
-
 	}
 }
