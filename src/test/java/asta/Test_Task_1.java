@@ -15,21 +15,19 @@ import asta.methods.MethodsFor1;
 
 public class Test_Task_1 extends MethodsFor1 {
 
-	static String baseUrl = "https://testingcup.pgs-soft.com/task_1";
-
+	String baseUrl = "https://testingcup.pgs-soft.com/task_1";
 	String Price_1_Basket;
 	String Price_1_Product_String;
+	String random_string;
 
 	double Price_Random_Product;
-	static int random;
-	static int min = 1;
-	static int max = 20;
+	int random;
+	int min = 1;
+	int max = 20;
 	int a = 1;
 	int sum;
 	double Price_1_Product_Double;
 	double Price_1_Double;
-
-	static String random_string;
 
 	JavascriptExecutor jse = (JavascriptExecutor) driver;
 

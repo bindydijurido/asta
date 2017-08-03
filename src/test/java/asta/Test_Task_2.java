@@ -15,12 +15,12 @@ import asta.methods.MethodsFor2;
 
 public class Test_Task_2 extends MethodsFor2 {
 
-	static String baseUrl = "https://testingcup.pgs-soft.com/task_2";
+	String baseUrl = "https://testingcup.pgs-soft.com/task_2";
 
-	public List<String> AllElementsTextBefore = new ArrayList<>();
-	public List<String> AllElementsTextAfter = new ArrayList<>();
-	public List<WebElement> myList = new ArrayList<>();
-	public List<WebElement> myListAfter = new ArrayList<>();
+	List<String> AllElementsTextBefore = new ArrayList<>();
+	List<String> AllElementsTextAfter = new ArrayList<>();
+	List<WebElement> myList = new ArrayList<>();
+	List<WebElement> myListAfter = new ArrayList<>();
 
 	@Test
 	public void FirstCategoryFunctionality() throws InterruptedException {
