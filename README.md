@@ -1,5 +1,15 @@
 Hello Folks!
 
+# go directly to the core:
+
+https://github.com/bindydijurido/asta/tree/master/src/test/java/asta
+
+# page with the tasks is linked here: 
+
+https://testingcup.pgs-soft.com/
+
+#
+
 In this project I am using: 
 
 - jUnit.jar v4 - https://github.com/junit-team/junit4/wiki/Download-and-Install
