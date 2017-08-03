@@ -17,8 +17,7 @@ public class Test_Task_5 extends MethodsFor5 {
 	String Cell3;
 	String Table;
 	String FileText;
-
-	public String baseUrl = "https://testingcup.pgs-soft.com/task_5";
+	String baseUrl = "https://testingcup.pgs-soft.com/task_5";
 
 	@Test
 	public void DataTransformationCheck() throws InterruptedException, IOException {
