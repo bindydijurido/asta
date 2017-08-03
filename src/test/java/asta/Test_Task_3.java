@@ -11,8 +11,8 @@ import asta.methods.MethodsFor3;
 
 public class Test_Task_3 extends MethodsFor3 {
 
-	static String baseUrl = "https://testingcup.pgs-soft.com/task_3";
-	
+	String baseUrl = "https://testingcup.pgs-soft.com/task_3";
+
 	@Test
 	public void WholeMenuFunctionality() throws InterruptedException {
 

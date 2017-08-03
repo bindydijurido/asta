@@ -15,14 +15,14 @@ import org.junit.Assert;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class Test_Task_4 extends MethodsFor4 {
 
-	static String baseUrl = "https://testingcup.pgs-soft.com/task_4";
-	static String latestWindow;
-	static String actualName;
-	static String expectedName;
-	static String actualMail;
-	static String expectedMail;
-	static String actualNumber;
-	static String expectedNumber;
+	String baseUrl = "https://testingcup.pgs-soft.com/task_4";
+	String latestWindow;
+	String actualName;
+	String expectedName;
+	String actualMail;
+	String expectedMail;
+	String actualNumber;
+	String expectedNumber;
 
 	static WebElement iframe;
 
