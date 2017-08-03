@@ -1,8 +1,5 @@
 package asta;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -15,16 +12,9 @@ import asta.methods.MethodsFor3;
 public class Test_Task_3 extends MethodsFor3 {
 
 	static String baseUrl = "https://testingcup.pgs-soft.com/task_3";
-
+	
 	@Test
 	public void WholeMenuFunctionality() throws InterruptedException {
-
-		// setup directory path to image
-
-		Path path = Paths.get("img/link.jpg");
-		Path absolutePath = path.toAbsolutePath();
-
-		String absolutePathString = absolutePath.toString();
 
 		driver.get(baseUrl);
 
@@ -64,7 +54,7 @@ public class Test_Task_3 extends MethodsFor3 {
 		// send file
 
 		findElement(By.xpath("html/body/div[1]/div/div[2]/div/div[1]/div[1]/div/form/div[5]/div[1]/span/input"))
-				.sendKeys(absolutePathString);
+				.sendKeys(ImagePath);
 
 		// button submit | alert check
 
