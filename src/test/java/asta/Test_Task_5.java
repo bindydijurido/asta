@@ -1,24 +1,35 @@
 package asta;
 
-import static org.junit.Assert.*;
+import java.io.BufferedReader;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 import org.junit.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Test_Task_5 {
+import asta.methods.MethodsFor5;
 
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
+public class Test_Task_5 extends MethodsFor5 {
+	
+	public String baseUrl = "https://testingcup.pgs-soft.com/task_5";
 
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
+	
 	@Test
-	public void test() {
-		fail("Not yet implemented");
+	public void LoadDataToTheApp() throws InterruptedException {
+		
+		BufferedReader FILE = new BufferedReader(new FileReader(list));
+		
+		driver.get(baseUrl);
+		
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(getInput()));
+		
+		findElement(getInput()).sendKeys(FileTextPath);
+		
+		
+
+
 	}
 }
 
