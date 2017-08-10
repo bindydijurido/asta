@@ -25,7 +25,6 @@ public class MethodsFor5 extends Root {
 	}
 
 	public static WebElement findElement(By locator) {
-
 		WebElement Element = driver.findElement(locator);
 		return Element;
 	}

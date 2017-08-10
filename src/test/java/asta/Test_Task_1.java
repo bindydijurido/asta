@@ -52,9 +52,7 @@ public class Test_Task_1 extends MethodsFor1 {
 
 		Price_1_Basket = findElement(By.xpath(getRoot(2) + "/div/div[2]/div[2]/p[2]/span")).getText().toString()
 				.split(" ")[0];
-
 		Price_1_Double = Double.parseDouble(Price_1_Basket);
-
 		Price_1_Double = Math.round(Price_1_Double);
 
 		System.out.println("Price before parsing: " + Price_1_Basket + " zl");
@@ -63,7 +61,6 @@ public class Test_Task_1 extends MethodsFor1 {
 				.toString().split(" ")[1];
 
 		Price_1_Product_Double = Double.parseDouble(Price_1_Product_String);
-
 		Price_Random_Product = Math.round(Price_1_Product_Double * random);
 
 		System.out.println("Product price is: " + Price_Random_Product + " zl");

@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public abstract class MethodsFor3 extends Root {
-	
+
 	Path path = Paths.get("img/link.jpg");
 	Path absolutePath = path.toAbsolutePath();
 
@@ -18,19 +18,15 @@ public abstract class MethodsFor3 extends Root {
 	protected String ImagePath = absolutePath.toString();
 
 	public static By getIntput(int element) {
-
 		return By.xpath(String.format(ROOT, Integer.toString(element)) + INTPUT);
 	}
 
 	public static By getTextArea(int element) {
-
 		return By.xpath(String.format(ROOT, Integer.toString(element)) + TEXTAREA);
 	}
 
 	public static WebElement findElement(By locator) {
-
 		WebElement Element = driver.findElement(locator);
-
 		return Element;
 	}
 }

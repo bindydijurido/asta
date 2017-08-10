@@ -38,7 +38,6 @@ public class Test_Task_2 extends MethodsFor2 {
 
 			WebElement x = findElement(getWebElement(1, i + 1));
 			myList.add(x);
-
 			AllElementsTextBefore.add(x.getText());
 		}
 
@@ -60,7 +59,6 @@ public class Test_Task_2 extends MethodsFor2 {
 
 			WebElement x = findElement(getHeader(i + 1));
 			myListAfter.add(x);
-
 			AllElementsTextAfter.add(x.getText());
 		}
 

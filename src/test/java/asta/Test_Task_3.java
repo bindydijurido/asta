@@ -47,7 +47,6 @@ public class Test_Task_3 extends MethodsFor3 {
 		findElement(getIntput(2)).sendKeys("Kowalski");
 		findElement(getTextArea(3)).clear();
 		findElement(getTextArea(3)).sendKeys("Pink Floyd's the best band in the world!");
-
 		findElement(getIntput(4)).clear();
 		findElement(getIntput(4)).sendKeys("513-513-513");
 

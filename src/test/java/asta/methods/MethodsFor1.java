@@ -11,24 +11,19 @@ public abstract class MethodsFor1 extends Root {
 	public static final String ROOT = "html/body/div[1]/div/div[2]/div[%s]";
 
 	protected static String getRoot(int element) {
-
 		return String.format(ROOT, Integer.toString(element));
 	}
 
 	public static By getForm(String element, int element1) {
-
 		return (By) By.xpath(String.format(getRoot(1) + FORM, element, Integer.toString(element1)));
 	}
 
 	public static By getButton(String element, int element1) {
-
 		return (By) By.xpath(String.format(getRoot(1) + BUTTON, element, Integer.toString(element1)));
 	}
 
 	public static WebElement findElement(By locator) {
-
 		WebElement Element = driver.findElement(locator);
-
 		return Element;
 	}
 }

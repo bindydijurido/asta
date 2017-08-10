@@ -14,30 +14,24 @@ public abstract class MethodsFor2 extends Root {
 	public static final String ROOT = "html/body/div[1]/div/div[2]/div[%s]";
 
 	protected static String getRoot(int element) {
-
 		return String.format(ROOT, Integer.toString(element));
 	}
 
 	public static By getSearch() {
-
 		return (By) By.xpath(getRoot(1) + SEARCH);
 	}
 
 	public static By getHeader(int element) {
-
 		return (By) By.xpath(String.format(getRoot(3) + HEADER0, Integer.toString(element)));
 	}
 
 	public static By getWebElement(int element, int element1) {
-
 		return (By) By
 				.xpath(String.format(getRoot(3) + HEADER1, Integer.toString(element), Integer.toString(element1)));
 	}
 
 	public static WebElement findElement(By locator) {
-
 		WebElement Element = driver.findElement(locator);
-
 		return Element;
 	}
 }
