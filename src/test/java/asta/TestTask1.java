@@ -21,7 +21,7 @@ public class TestTask1 extends MethodsFor1 {
 
 		driver.get("https://testingcup.pgs-soft.com/task_1");
 		wait.until(ExpectedConditions.elementToBeClickable(getForm("1", 1)));
-		log("Random quantity for single product: " + randomValue);
+		log("Random quantity for a single product: " + randomValue);
 
 		findElement(getForm("1", 1)).sendKeys(String.valueOf(randomValue));
 		wait.until(ExpectedConditions.elementToBeClickable(getButton("1", 1)));
@@ -51,7 +51,7 @@ public class TestTask1 extends MethodsFor1 {
 
 		wait.until(ExpectedConditions.elementToBeClickable(getForm("1", 1)));
 		log("I am checking Alert Functionality");
-		log("I am starting fulfilling the basket with random data to cover all avaiable product types: ");
+		log("I am fulfilling the basket with random data to cover all avaiable product types: ");
 
 		do {
 			for (productInColumn = 1; productInColumn < 5; productInColumn++) {
@@ -90,9 +90,19 @@ public class TestTask1 extends MethodsFor1 {
 			log(totalProductsQuantity + ", ");
 		} while (totalProductsQuantity <= 100);
 
-		log(" - the maximum value has been reached");
+		log(totalProductsQuantity + " products or above - the maximum value has been reached");
+
+		if (totalProductsQuantity == 100) {
+			productInRow = "1";
+			productInColumn = 1;
+
+			findElement(getForm(productInRow, productInColumn)).sendKeys("1");
+			findElement(getButton(productInRow, productInColumn)).click();
+		}
 
 		wait.until(ExpectedConditions.alertIsPresent());
-		log("Alert message: " + driver.switchTo().alert().getText().toString() + "Alert was present - test passed");
+		log("Alert message: '" + driver.switchTo().alert().getText().toString() + "'");
+		driver.switchTo().alert().accept();
+		log("Alert was present and closed - test passed");
 	}
 }
