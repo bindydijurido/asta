@@ -12,7 +12,7 @@ public abstract class MethodsFor4 extends Root {
 		return By.xpath("html/body/div[1]/div/div[2]/div/div[2]/button");
 	}
 
-	public By getButton1() {
+	public By getSubmit() {
 		return By.xpath("html/body/div[1]/div/div[1]/div/div/form/button");
 	}
 
