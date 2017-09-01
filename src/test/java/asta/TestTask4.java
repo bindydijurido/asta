@@ -34,7 +34,7 @@ public class TestTask4 extends MethodsFor4 {
 
 		findElement(getInput(2)).sendKeys("test.com.pl");
 		findElement(getButton1()).submit();
-		Assert.assertEquals("Nieprawidłowy email", findElement(getSpan(2)).getText().toString());
+		Assert.assertEquals("Nieprawidłowy email", findElement(getAlert(2)).getText().toString());
 		log("Wrong email format alert switched properly");
 	}
 
@@ -43,7 +43,7 @@ public class TestTask4 extends MethodsFor4 {
 
 		findElement(getInput(3)).sendKeys("513513513");
 		findElement(getButton1()).submit();
-		Assert.assertEquals("Zły format telefonu - prawidłowy: 600-100-200", findElement(getSpan(3)).getText().toString());
+		Assert.assertEquals("Zły format telefonu - prawidłowy: 600-100-200", findElement(getAlert(3)).getText().toString());
 		log("Wrong phone number format alert switched properly");
 	}
 
@@ -55,9 +55,9 @@ public class TestTask4 extends MethodsFor4 {
 		findElement(getInput(3)).clear();
 		findElement(getInput(3)).sendKeys("513-513-513");
 		findElement(getButton1()).submit();
-		wait.until(ExpectedConditions.visibilityOf(findElement(getConfirmationMsg())));
+		wait.until(ExpectedConditions.visibilityOf(findElement(getConfirmation())));
 
-		Assert.assertEquals("Wiadomość została wysłana", findElement(getConfirmationMsg()).getText().toString());
+		Assert.assertEquals("Wiadomość została wysłana", findElement(getConfirmation()).getText().toString());
 		log("Forms accepted properly provided data witch success - test passed");
 	}
 }

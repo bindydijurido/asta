@@ -20,11 +20,11 @@ public abstract class MethodsFor4 extends Root {
 		return By.xpath(String.format("html/body/div[1]/div/div[1]/div/div/form/div[%s]/div[1]/input", Integer.toString(element)));
 	}
 
-	public By getSpan(int element) {
+	public By getAlert(int element) {
 		return By.xpath(String.format("html/body/div[1]/div/div[1]/div/div/form/div[%s]/div[1]/span", Integer.toString(element)));
 	}
 
-	public By getConfirmationMsg() {
+	public By getConfirmation() {
 		return By.xpath("html/body/div[1]/h1");
 	}
 

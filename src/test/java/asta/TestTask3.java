@@ -38,7 +38,7 @@ public class TestTask3 extends MethodsFor3 {
 		findElement(loadPhoto()).sendKeys(Paths.get("img/link.jpg").toAbsolutePath().toString());
 		findElement(submitButton()).submit();
 
-		Assert.assertEquals("Twoje dane zosta≥y poprawnie zapisane",
+		Assert.assertEquals("Twoje dane zosta≈Çy poprawnie zapisane",
 				driver.findElement(getConfirmation()).getText().toString());
 		log("Data was properly provided. Test passed");
 	}
