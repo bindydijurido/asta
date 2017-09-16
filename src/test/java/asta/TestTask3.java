@@ -11,7 +11,7 @@ import org.junit.Assert;
 public class TestTask3 extends MethodsFor3 {
 
 	@Test
-	public void WholeMenuFunctionality() throws InterruptedException {
+	public void wholeMenuFunctionality() throws InterruptedException {
 
 		driver.get("https://testingcup.pgs-soft.com/task_3");
 		wait.until(ExpectedConditions.elementToBeClickable(getMenu()));
