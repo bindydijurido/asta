@@ -1,14 +1,16 @@
-package asta;
+package tests;
 
 import java.nio.file.Paths;
 
 import org.junit.Test;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import asta.methods.MethodsFor3;
+
+import framework.pages.page3.Page3;
+
 import org.junit.Assert;
 
-public class TestTask3 extends MethodsFor3 {
+public class Test_3 extends Page3 {
 
 	@Test
 	public void wholeMenuFunctionality() throws InterruptedException {

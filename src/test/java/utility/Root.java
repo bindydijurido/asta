@@ -1,4 +1,4 @@
-package asta.methods;
+package utility;
 
 import org.junit.AfterClass;
 import org.junit.BeforeClass;

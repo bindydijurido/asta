@@ -1,4 +1,4 @@
-package asta;
+package tests;
 
 import java.io.*;
 import java.nio.file.Paths;
@@ -6,9 +6,10 @@ import java.nio.file.Paths;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import asta.methods.MethodsFor5;
 
-public class TestTask5 extends MethodsFor5 {
+import framework.pages.page5.Page5;
+
+public class Test_5 extends Page5 {
 
 	@SuppressWarnings("resource")
 	@Test
