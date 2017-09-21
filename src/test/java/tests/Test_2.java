@@ -9,10 +9,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import actions.GoTo;
-import pageObjects.PageObjects;
+import framework.pages.page2.Page2;
 
-public class Test_2 extends PageObjects {
+public class Test_2 extends Page2 {
+
+	String baseUrl = "https://testingcup.pgs-soft.com/task_2";
 
 	List<String> arrayActual = new ArrayList<>();
 	List<String> arrayExpected = new ArrayList<>();
@@ -22,13 +23,13 @@ public class Test_2 extends PageObjects {
 	@Test
 	public void sportCategoryFunctionality() throws InterruptedException {
 
-		new GoTo().openPage("task_2");
+		driver.get(baseUrl);
 		wait.until(ExpectedConditions.elementToBeClickable(getSearch()));
 		log("I am getting text from main page");
 
 		for (int productNr = 0; productNr < 6; productNr++) {
-			listActual.add(let(getWebElement(1, productNr + 1)));
-			arrayActual.add(let(getWebElement(1, productNr + 1)).getText());
+			listActual.add(findElement(getWebElement(1, productNr + 1)));
+			arrayActual.add(findElement(getWebElement(1, productNr + 1)).getText());
 		}
 
 		for (WebElement listActual : listActual) {
@@ -37,14 +38,14 @@ public class Test_2 extends PageObjects {
 
 		log(" - OK");
 
-		let(getSearch()).click();
-		let(getIntput()).sendKeys("Sport");
+		findElement(getSearch()).click();
+		findElement(getIntput()).sendKeys("Sport");
 		wait.until(ExpectedConditions.elementToBeClickable(getForm()));
-		let(getForm()).click();
+		findElement(getForm()).click();
 		log("I am getting text from product category");
 
 		for (int productNr = 0; productNr < 6; productNr++) {
-			WebElement productH = let(getHeader(productNr + 1));
+			WebElement productH = findElement(getHeader(productNr + 1));
 			listExpected.add(productH);
 			arrayExpected.add(productH.getText());
 		}
@@ -64,14 +65,14 @@ public class Test_2 extends PageObjects {
 
 		JavascriptExecutor executorJS = (JavascriptExecutor) driver;
 
-		new GoTo().openPage("task_2");
+		driver.get(baseUrl);
 		wait.until(ExpectedConditions.elementToBeClickable(getSearch()));
 		log("I am getting text from main page");
 
 		executorJS.executeScript("scroll(0, 600);");
 
 		for (int productNr = 0; productNr < 6; productNr++) {
-			WebElement webElement = let(getWebElement(2, productNr + 1));
+			WebElement webElement = findElement(getWebElement(2, productNr + 1));
 			listActual.add(webElement);
 			arrayActual.add(webElement.getText());
 		}
@@ -82,14 +83,14 @@ public class Test_2 extends PageObjects {
 
 		log(" - OK");
 
-		let(getSearch()).click();
-		let(getIntput()).sendKeys("Elektronika");
+		findElement(getSearch()).click();
+		findElement(getIntput()).sendKeys("Elektronika");
 		wait.until(ExpectedConditions.elementToBeClickable(getForm()));
-		let(getForm()).click();
+		findElement(getForm()).click();
 		log("I am checking products category");
 
 		for (int productNr = 0; productNr < 6; productNr++) {
-			WebElement productH = let(getHeader(productNr + 1));
+			WebElement productH = findElement(getHeader(productNr + 1));
 			listExpected.add(productH);
 			arrayExpected.add(productH.getText());
 		}
@@ -109,14 +110,14 @@ public class Test_2 extends PageObjects {
 
 		JavascriptExecutor executorJS = (JavascriptExecutor) driver;
 
-		new GoTo().openPage("task_2");
+		driver.get(baseUrl);
 		wait.until(ExpectedConditions.elementToBeClickable(getSearch()));
 		log("I am getting text from main page");
 
 		executorJS.executeScript("scroll(0, 600);");
 
 		for (int productNr = 0; productNr < 6; productNr++) {
-			WebElement webElement = let(getWebElement(3, productNr + 1));
+			WebElement webElement = findElement(getWebElement(3, productNr + 1));
 			listActual.add(webElement);
 			arrayActual.add(webElement.getText());
 		}
@@ -127,15 +128,15 @@ public class Test_2 extends PageObjects {
 
 		log(" - OK");
 
-		let((getSearch())).click();
-		let(getIntput()).sendKeys("Firma i Uslugi");
+		findElement((getSearch())).click();
+		findElement(getIntput()).sendKeys("Firma i Uslugi");
 		wait.until(ExpectedConditions.elementToBeClickable(getForm()));
-		let(getForm()).click();
+		findElement(getForm()).click();
 
 		log("I am checking products category");
 
 		for (int productNr = 0; productNr < 6; productNr++) {
-			WebElement productH = let(getHeader(productNr + 1));
+			WebElement productH = findElement(getHeader(productNr + 1));
 			listExpected.add(productH);
 			arrayExpected.add(productH.getText());
 		}
