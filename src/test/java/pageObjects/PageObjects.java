@@ -1,10 +1,10 @@
 package pageObjects;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.openqa.selenium.By;
 
-import utility.Root;
-
-public class PageObjects extends Root {
+public class PageObjects extends PageMethods {
 
 	public static String getRoot(int element) {
 		return String.format("html/body/div[1]/div/div[2]/div[%s]", Integer.toString(element));
@@ -43,6 +43,21 @@ public class PageObjects extends Root {
 	public static By getInput() {
 		return By.xpath("html/body/div[1]/div/div[2]/div[1]/div[2]/span/input");
 	}
-	
-	
+
+	protected double getPrice() {
+		return Math.round(Double.parseDouble(let(productsSum("2"))
+				.getText().toString()
+				.split(" ")[0]));
+	}
+
+	protected double getRoundPrice(int value) {
+		return Math.round(Double.parseDouble(let(getProductPrice())
+				.getText().toString()
+				.split(" ")[1]) * value);
+	}
+
+	public int randomValue(int min, int max) {
+		return (ThreadLocalRandom.current().nextInt(min, max));
+	}
+
 }

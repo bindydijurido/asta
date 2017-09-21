@@ -7,22 +7,25 @@ import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import actions.*;
+import actions.GoTo;
+import pageObjects.PageObjects;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Test_1 extends Task_One {
+public class Test_1 extends PageObjects {
 
 	@Test
 	public void test1AddProductToBasket() {
 		
+		int randomValue = randomValue(1,20);
+		
 		log("I am checking AddProductToBasket functionality");
 		
-		new GoTo().openPage("task_1").condition(ExpectedConditions.elementToBeClickable(quantityField("1", 1)));
+		new GoTo().openPage("task_1");
 
-		let(quantityField("1", 1)).sendKeys(String.valueOf(randomQuantity));
+		let(quantityField("1", 1)).sendKeys(String.valueOf(randomValue));
 		let(addButton("1", 1)).click();
 
-		Assert.assertEquals(getPrice(), getRoundPrice(), randomQuantity);
+		Assert.assertEquals(getPrice(), getRoundPrice(randomValue), randomValue(1,20));
 		log("Price assertion and data transformation succeeded");
 	}
 	
@@ -47,7 +50,7 @@ public class Test_1 extends Task_One {
 				totalProductsQuantity = Integer.parseInt(let(productsSum("1")).getText().toString());
 			}
 
-			if (totalProductsQuantity == 100) {
+			if (totalProductsQuantity >= 100) {
 				break;
 			}
 
@@ -60,7 +63,7 @@ public class Test_1 extends Task_One {
 				totalProductsQuantity = Integer.parseInt(let(productsSum("1")).getText().toString());
 			}
 
-			if (totalProductsQuantity == 100) {
+			if (totalProductsQuantity >= 100) {
 				break;
 			}
 
@@ -74,17 +77,17 @@ public class Test_1 extends Task_One {
 			
 
 			log(totalProductsQuantity + ", ");
-		} while (totalProductsQuantity == 100);
+		} while (totalProductsQuantity <= 100);
 
 		log(totalProductsQuantity + " products or above - the maximum value has been reached");
 
-//		if (totalProductsQuantity == 100) {
-//			productInRow = "1";
-//			productInColumn = 1;
-//
-//			let(quantityField(productInRow, productInColumn)).sendKeys("1");
-//			let(addButton(productInRow, productInColumn)).click();
-//		}
+		if (totalProductsQuantity >= 100) {
+			productInRow = "1";
+			productInColumn = 1;
+
+			let(quantityField(productInRow, productInColumn)).sendKeys("1");
+			let(addButton(productInRow, productInColumn)).click();
+		}
 
 		log("Alert message: '" + driver.switchTo().alert().getText().toString() + "'");
 		driver.switchTo().alert().accept();
