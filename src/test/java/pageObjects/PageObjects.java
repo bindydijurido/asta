@@ -59,5 +59,4 @@ public class PageObjects extends PageMethods {
 	public int randomValue(int min, int max) {
 		return (ThreadLocalRandom.current().nextInt(min, max));
 	}
-
 }
