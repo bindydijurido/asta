@@ -7,9 +7,10 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import framework.pages.page5.Page5;
+import actions.GoTo;
+import pageObjects.PageObjects;
 
-public class Test_5 extends Page5 {
+public class Test_5 extends PageObjects {
 
 	@SuppressWarnings("resource")
 	@Test
@@ -17,17 +18,17 @@ public class Test_5 extends Page5 {
 
 		BufferedReader textFile = new BufferedReader(new FileReader("txt/file.txt"));
 
-		driver.get("https://testingcup.pgs-soft.com/task_5");
+		new GoTo().openPage("task_5");
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(getInput()));
-		findElement(getInput()).sendKeys(Paths.get("txt/file.txt").toAbsolutePath().toString());
+		let(getInput()).sendKeys(Paths.get("txt/file.txt").toAbsolutePath().toString());
 		wait.until(ExpectedConditions.elementToBeClickable(firstColumn()));
 		log("I am comparing Text File with loaded table on web page");
 
 		for (int Row = 1; Row <= 20; Row++) {
 			Assert.assertEquals(textFile.readLine().toString(),
-							findElement(getTableData(Row, 1)).getText().toString() + ","
-							+ findElement(getTableData(Row, 2)).getText().toString() + ","
-							+ findElement(getTableData(Row, 3)).getText().toString());
+					let(getTableData(Row, 1)).getText().toString() + ","
+							+ let(getTableData(Row, 2)).getText().toString() + ","
+							+ let(getTableData(Row, 3)).getText().toString());
 		}
 
 		log("Test passed - text file was succesfully loaded and displayed properly in table form");

@@ -8,12 +8,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public abstract class Root {
 
 	public static WebDriver driver;
-			
+
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 
 		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
-		
 
 		/**
 		 * for MacOS systems:

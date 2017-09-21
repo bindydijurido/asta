@@ -15,20 +15,20 @@ public class Test_1 extends PageObjects {
 
 	@Test
 	public void test1AddProductToBasket() {
-		
-		int randomValue = randomValue(1,20);
-		
+
+		int randomValue = randomValue(1, 20);
+
 		log("I am checking AddProductToBasket functionality");
-		
+
 		new GoTo().openPage("task_1");
 
 		let(quantityField("1", 1)).sendKeys(String.valueOf(randomValue));
 		let(addButton("1", 1)).click();
 
-		Assert.assertEquals(getPrice(), getRoundPrice(randomValue), randomValue(1,20));
+		Assert.assertEquals(getPrice(), getRoundPrice(randomValue), randomValue(1, 20));
 		log("Price assertion and data transformation succeeded");
 	}
-	
+
 	@Test
 	public void test2FillBasket() throws InterruptedException {
 
@@ -36,7 +36,7 @@ public class Test_1 extends PageObjects {
 		int productInColumn;
 		int totalProductsQuantity = 0;
 		JavascriptExecutor executorJS = (JavascriptExecutor) driver;
-		
+
 		wait.until(ExpectedConditions.elementToBeClickable(quantityField("1", 1)));
 		log("I am checking Alert Functionality");
 		log("I am fulfilling the basket with random data to cover all avaiable product types: ");
@@ -74,14 +74,13 @@ public class Test_1 extends PageObjects {
 				let(addButton(productInRow, productInColumn)).click();
 				totalProductsQuantity = Integer.parseInt(let(productsSum("1")).getText().toString());
 			}
-			
 
 			log(totalProductsQuantity + ", ");
 		} while (totalProductsQuantity <= 100);
 
 		log(totalProductsQuantity + " products or above - the maximum value has been reached");
 
-		if (totalProductsQuantity >= 100) {
+		if (totalProductsQuantity <= 100) {
 			productInRow = "1";
 			productInColumn = 1;
 
