@@ -1,4 +1,4 @@
-package asta;
+package tests;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,10 @@ import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import asta.methods.MethodsFor2;
 
-public class TestTask2 extends MethodsFor2 {
+import framework.pages.page2.Page2;
+
+public class Test_2 extends Page2 {
 
 	String baseUrl = "https://testingcup.pgs-soft.com/task_2";
 

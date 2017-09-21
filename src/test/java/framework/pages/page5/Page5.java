@@ -1,10 +1,12 @@
-package asta.methods;
+package framework.pages.page5;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class MethodsFor5 extends Root {
+import utility.Root;
+
+public class Page5 extends Root {
 
 	protected WebDriverWait wait = new WebDriverWait(driver, 10);
 

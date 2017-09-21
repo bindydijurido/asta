@@ -1,16 +1,17 @@
-package asta;
+package tests;
 
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.junit.runners.MethodSorters;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import asta.methods.MethodsFor4;
+
+import framework.pages.page4.Page4;
 
 import org.junit.Assert;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TestTask4 extends MethodsFor4 {
+public class Test_4 extends Page4 {
 
 	@Test
 	public void test1WrongNameForm() throws InterruptedException {
