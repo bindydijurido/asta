@@ -2,11 +2,11 @@ Hello Folks!
 
 # go directly to the core:
 
-https://github.com/bindydijurido/asta/tree/master/src/test/java/asta
+https://github.com/bindydijurido/asta/tree/develop/src/test/java/tests
 
-#adapt driver for your OS
+# adapt driver for your OS here:
 
-
+https://github.com/bindydijurido/asta/blob/develop/src/test/java/utility/Root.java
 
 # page with the tasks is linked here: 
 
