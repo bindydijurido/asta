@@ -13,7 +13,7 @@ best,
 
 https://github.com/bindydijurido/asta/tree/develop/src/test/java/tests
 
-# adapt driver for your OS here:
+# adapt webdriver for your OS here:
 
 https://github.com/bindydijurido/asta/blob/develop/src/test/java/utility/Root.java
 
