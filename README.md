@@ -17,7 +17,7 @@ https://github.com/bindydijurido/asta/tree/develop/src/test/java/tests
 
 https://github.com/bindydijurido/asta/blob/develop/src/test/java/utility/Root.java
 
-# page with the tasks is linked here: 
+# tested pages are linked here: 
 
 https://testingcup.pgs-soft.com/
 
