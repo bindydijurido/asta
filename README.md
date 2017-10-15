@@ -4,6 +4,10 @@ Hello Folks!
 
 https://github.com/bindydijurido/asta/tree/master/src/test/java/asta
 
+#adapt driver for your OS
+
+
+
 # page with the tasks is linked here: 
 
 https://testingcup.pgs-soft.com/

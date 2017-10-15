@@ -1,5 +1,7 @@
 package utility;
 
+import java.util.concurrent.TimeUnit;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +16,7 @@ public abstract class Root {
 
 		System.setProperty("webdriver.gecko.driver", "libs/geckodriver.exe");
 
+
 		/**
 		 * for MacOS systems:
 		 * 
@@ -22,6 +25,7 @@ public abstract class Root {
 		 */
 
 		driver = new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 
 	@AfterClass
