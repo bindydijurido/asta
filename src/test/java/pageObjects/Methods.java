@@ -8,11 +8,6 @@ import utility.Root;
 
 public class Methods extends Root {
 
-	public WebElement findElement(By locator) {
-		WebElement Element = driver.findElement(locator);
-		return Element;
-	}
-
 	public static By getTableData(int element1, int element2) {
 		return By.xpath(String.format("html/body/div[1]/div/div[2]/div[2]/div/div/table/tbody/tr[%s]/td[%s]",
 				Integer.toString(element1), Integer.toString(element2)));
