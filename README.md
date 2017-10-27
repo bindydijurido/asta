@@ -36,5 +36,6 @@ In this project I am using:
 You can download everything manually or simply import gradle project. *Please remember to check libs folder before running the tests*.
 
 Enjoy and feel free to comment everything you want,
+
 Best,
 bindydijurido
