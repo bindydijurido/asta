@@ -5,7 +5,7 @@ This is my very first repository, that I've ever built on :) I feel so sentiment
 I changed a code structure there and there. This is very strange feeling, when you're looking at your very first, old code - you realize, that the first pancake is always spoiled ;)
 
 I am aware, that this repository isn't ideal but I don't want to waste my time with 'spoiled' stuff anymore. 
-Now it's time to share something much more interesting with the world!
+Now it's time to share something much more interesting to the others :)!
 
 best,
 
