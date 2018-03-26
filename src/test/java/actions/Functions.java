@@ -106,7 +106,7 @@ public class Functions extends Methods {
 		let(loadPhoto()).sendKeys(Paths.get(photoPath).toAbsolutePath().toString());
 		let(submitButton()).submit();
 
-		Assert.assertEquals("Twoje dane zosta≥y poprawnie zapisane",
+		Assert.assertEquals("Twoje dane zosta≈Çy poprawnie zapisane",
 				let(getConfirmation()).getText().toString());
 	}
 
